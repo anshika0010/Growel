@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import image1 from "../../public/image1.JPG";
-import image2 from "../../public/image1.JPG";
 
 export default function ServicesPage() {
   return (
@@ -177,12 +175,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="order-1 lg:order-2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <img
-                src={image1}
-                alt="Security guards"
-                fill
-                className="object-cover"
-              />
+              <img src="" alt="Security guards" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -194,7 +187,7 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src={image2}
+                src=""
                 alt="Housekeeping staff"
                 fill
                 className="object-cover"
