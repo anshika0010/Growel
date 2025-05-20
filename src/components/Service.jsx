@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import image1 from "../assets/image1.jpeg";
-import image2 from "../assets/image2.jpeg";
+import image1 from "../../public/image1.JPG";
+import image2 from "../assets/image2.JPG";
 
 export default function ServicesPage() {
   return (
