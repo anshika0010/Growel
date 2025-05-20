@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Image2 from "../assets/group2.jpg";
+import Image2 from "/images/group2.jpg";
 import {
   Shield,
   Users,

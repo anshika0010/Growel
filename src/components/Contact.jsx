@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Officeimage from "../assets/contact.jpg";
+import Officeimage from "/images/contact.jpg";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

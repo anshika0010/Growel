@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import logo from "../assets/logo.webp";
-import logo from "../assets/logoai.png";
+import logo from "/images/logoai.png";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

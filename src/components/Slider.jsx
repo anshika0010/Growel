@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "../assets/Group.webp";
-import Image1 from "../assets/group2.jpg";
-import Image2 from "../assets/image3.JPG";
+import Image from "/images/Group.webp";
+import Image1 from "/images/group2.jpg";
+import Image2 from "/images/group2.jpg";
 
 import { Link } from "react-router-dom";
 // Import Swiper styles
