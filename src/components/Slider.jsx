@@ -3,15 +3,14 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "../assets/Group.webp";
 import Image1 from "../assets/group2.jpg";
+import Image2 from "../assets/image3.JPG";
 
 import { Link } from "react-router-dom";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import group2 from "../../public/group2.JPG";
-// import image2 from "/image2.JPG";
-// import required modules
+
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const Slider = () => {
@@ -99,7 +98,7 @@ const Slider = () => {
           <section className="relative bg-slate-900 text-white">
             <div className="absolute inset-0 z-0 opacity-30">
               <img
-                src="/image2.JPG"
+                src={Image2}
                 alt="Security personnel"
                 className="object-cover w-full h-full"
               />
