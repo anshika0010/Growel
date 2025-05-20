@@ -9,12 +9,13 @@ import {
   CheckCircle,
   ChevronRight,
 } from "lucide-react";
+import Slider from "./Slider";
 
 const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white">
+      {/* <section className="relative bg-slate-900 text-white">
         <div className="absolute inset-0 z-0 opacity-30">
           <img
             src={Image}
@@ -43,8 +44,8 @@ const HomePage = () => {
             </Link>
           </div>
         </div>
-      </section>
-
+      </section> */}
+      {<Slider />}
       {/* Services Overview */}
       <section className="py-16 md:py-24 bg-slate-50">
         <div className="container mx-auto">
@@ -58,10 +59,10 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: <Shield className="h-8 w-8 text-blue-600" />,
+                icon: Image2,
                 title: "Security Guards",
                 text: "Professionally trained security personnel for residential, commercial, and industrial properties.",
                 link: "/services#security-guards",
@@ -91,6 +92,55 @@ const HomePage = () => {
               >
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   {service.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-500 mb-4">{service.text}</p>
+                <Link
+                  to={service.link}
+                  className="text-blue-600 font-medium inline-flex items-center hover:underline"
+                >
+                  Learn More <ChevronRight className="h-4 w-4 ml-1" />
+                </Link>
+              </div>
+            ))}
+          </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Image2,
+                title: "Security Guards",
+                text: "Professionally trained security personnel for residential, commercial, and industrial properties.",
+                link: "/services#security-guards",
+              },
+              {
+                icon: Image2,
+                title: "Housekeeping Staff",
+                text: "Reliable and efficient housekeeping personnel for maintaining cleanliness and order.",
+                link: "/services#housekeeping",
+              },
+              {
+                icon: Image2,
+                title: "Bouncers",
+                text: "Professional event security personnel for clubs, parties, and special events.",
+                link: "/services#bouncers",
+              },
+              {
+                icon: Image2,
+                title: "Armed Personnel",
+                text: "Highly trained and licensed armed security professionals for high-risk environments.",
+                link: "/services#armed-personnel",
+              },
+            ].map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 text-center rounded-lg shadow hover:shadow-lg transition-shadow"
+              >
+                <div className="bg-blue-100 w-60 h-60 rounded-md flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className="w-60 h-60 object-cover"
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                 <p className="text-gray-500 mb-4">{service.text}</p>

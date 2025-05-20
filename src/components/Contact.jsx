@@ -176,8 +176,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Get a Free Quote</h2>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <h2 className="text-3xl text-red-500 font-bold mb-6">
+                Get a Free Quote
+              </h2>
               <p className="text-lg text-gray-600 mb-8">
                 Fill out the form below to request a quote or inquire about our
                 services. Our team will get back to you as soon as possible.
@@ -377,9 +379,9 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-blue-600 text-white">
+      <section className="py-16 md:py-24  bg-gradient-to-b from-blue-400 to-blue-500  text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl text-red-500 font-bold mb-6">
             Ready to Secure Your Property?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
