@@ -1,0 +1,150 @@
+import { useState, useEffect } from "react";
+// import logo from "../assets/logo.webp";
+import logo from "../assets/logoai.png";
+import { Link } from "react-router-dom";
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [pathname, setPathname] = useState("/");
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About Us", href: "/about" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
+        {/* Logo */}
+        <Link to="/">
+          <img src={logo} alt="Growel" className="h-28" />
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`text-sm font-medium transition-colors hover:text-red-600 ${
+                pathname === link.href ? "text-red-600" : "text-gray-500"
+              }`}
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
+
+        {/* Desktop Contact + CTA */}
+        <div className="hidden md:flex items-center gap-4">
+          <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
+            <svg
+              className="h-4 w-4 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10v-2H9.42a1 1 0 01-.94-.66L14 9h4a1 1 0 000-2h-5.42" />
+            </svg>
+            <span>+91 9811580318 </span>
+          </div>
+          <a
+            href="/contact"
+            className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-400 text-sm font-medium"
+          >
+            Get a Quote
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {isMenuOpen ? (
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white border-b shadow-sm z-40">
+          <div className="px-4 py-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  setPathname(link.href);
+                }}
+                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                  pathname === link.href ? "text-blue-600" : "text-gray-600"
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="flex items-center gap-2 text-sm text-gray-700">
+              <svg
+                className="h-4 w-4 text-blue-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10v-2H9.42a1 1 0 01-.94-.66L14 9h4a1 1 0 000-2h-5.42" />
+              </svg>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <a
+              href="/contact"
+              className="w-full px-4 py-2 bg-blue-600 text-white rounded text-center hover:bg-blue-700 text-sm font-medium"
+            >
+              Get a Quote
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Navbar;
