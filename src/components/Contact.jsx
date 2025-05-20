@@ -110,7 +110,7 @@ export default function ContactPage() {
                 href="tel:+15551234567"
                 className="text-blue-600 font-medium hover:underline"
               >
-                +1 (555) 123-4567
+                +91 9811580318
               </Link>
             </div>
 
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 href="mailto:info@secureforce.com"
                 className="text-blue-600 font-medium hover:underline"
               >
-                info@secureforce.com
+                sales@growelsecuritas4u.com
               </Link>
             </div>
 
@@ -163,9 +163,8 @@ export default function ContactPage() {
                 Our headquarters is located in the heart of the city
               </p>
               <address className="not-italic text-blue-600 font-medium">
-                123 Security Avenue, Suite 456
-                <br />
-                New York, NY 10001
+                Growel Complex ,Dadri Road,
+                <br></br> Sector-41, Noida-201303
               </address>
             </div>
           </div>
@@ -229,7 +228,7 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="John Smith"
+                        placeholder="Name"
                         className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
                           errors.name ? "border-red-500" : "border-gray-300"
                         }`}
@@ -254,7 +253,7 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@example.com"
+                        placeholder="email@example.com"
                         className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
                           errors.email ? "border-red-500" : "border-gray-300"
                         }`}
@@ -281,7 +280,7 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="(555) 123-4567"
+                        placeholder="mobile number"
                         className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
                           errors.phone ? "border-red-500" : "border-gray-300"
                         }`}
@@ -362,105 +361,16 @@ export default function ContactPage() {
             </div>
 
             {/* Map and Office Hours */}
-            <div>
-              <div className="bg-slate-200 h-[300px] rounded-lg mb-8 flex items-center justify-center">
-                <img
-                  src="/placeholder.svg?height=300&width=600&text=Map"
-                  alt="Office location map"
-                  width={600}
-                  height={300}
-                  className="rounded-lg"
-                />
-              </div>
-
-              <h3 className="text-xl font-bold mb-4">Office Hours</h3>
-              <div className="space-y-3 mb-8">
-                <div className="flex justify-between items-center pb-2 border-b">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-4 w-4 text-blue-600"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span>Monday - Friday</span>
-                  </div>
-                  <span className="font-medium">8:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-4 w-4 text-blue-600"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span>Saturday</span>
-                  </div>
-                  <span className="font-medium">9:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center pb-2 border-b">
-                  <div className="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-4 w-4 text-blue-600"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span>Sunday</span>
-                  </div>
-                  <span className="font-medium">Closed</span>
-                </div>
-              </div>
-
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Emergency Contact</h3>
-                <p className="text-gray-600 mb-4">
-                  For urgent security matters requiring immediate attention,
-                  please call our 24/7 emergency hotline.
-                </p>
-                <div className="flex items-center gap-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  <Link
-                    href="tel:+15559876543"
-                    className="text-blue-600 font-bold text-lg hover:underline"
-                  >
-                    +1 (555) 987-6543
-                  </Link>
-                </div>
-              </div>
+            <div className="bg-slate-200 h-[400px] w-full rounded-lg mb-8 flex items-center justify-center">
+              <iframe
+                width="100%"
+                height="100%"
+                className="rounded-lg"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Growel%20Complex,%20Main,%20Dadri%20Main%20Rd,%20Block%20I,%20Sector%2041,%20Noida,%20Uttar%20Pradesh%20201303+(Growel%20Securitas%20&amp;%20Manpower%20Management%20Services%20Pvt.%20Ltd.)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              />
             </div>
           </div>
         </div>

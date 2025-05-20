@@ -451,12 +451,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="order-1 lg:order-2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <img
-                src={image1}
-                alt="Event security"
-                fill
-                className="object-cover"
-              />
+              <img src="" alt="Event security" fill className="object-cover" />
             </div>
           </div>
         </div>
