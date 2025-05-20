@@ -9,7 +9,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import group2 from "../../public/group2.JPG";
-// import image1 from "../../public/image1.JPG";
 import image2 from "../../public/image2.JPG";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
