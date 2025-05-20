@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Image from "../assets/Group.webp";
-import Image2 from "../assets/group2.jpeg";
+import Image2 from "../../public/group2.JPG";
 import {
   Shield,
   Users,
