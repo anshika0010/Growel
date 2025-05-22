@@ -1,409 +1,471 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import ContactUsImage from "../../public/images/contact.jpg";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Send,
+  CheckCircle,
+  Loader2,
+  MessageSquare,
+  Building,
+  Users,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import Officeimage from "/images/contact.jpg";
+// Animated Section Component
+const AnimatedSection = ({ children, delay = 0 }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
+// Contact Info Card Component
+const ContactInfoCard = ({ icon, title, details, delay }) => {
+  return (
+    <motion.div
+      className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      whileHover={{ y: -5 }}
+    >
+      <div className="flex justify-center mb-4">
+        <div className="p-3 bg-red-50 rounded-full text-red-500">{icon}</div>
+      </div>
+      <h3 className="text-lg font-semibold text-center mb-2">{title}</h3>
+      <div className="text-gray-600 text-center">
+        {Array.isArray(details) ? (
+          details.map((detail, index) => (
+            <p key={index} className="mb-1">
+              {detail}
+            </p>
+          ))
+        ) : (
+          <p>{details}</p>
+        )}
+      </div>
+    </motion.div>
+  );
+};
+
+// Form Input Component
+const FormInput = ({
+  label,
+  type = "text",
+  placeholder,
+  name,
+  value,
+  onChange,
+  required = false,
+}) => {
+  return (
+    <div className="mb-6">
+      <label
+        className="block text-gray-700 text-sm font-medium mb-2"
+        htmlFor={name}
+      >
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
+      {type === "textarea" ? (
+        <textarea
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 resize-none"
+          id={name}
+          name={name}
+          rows="5"
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          required={required}
+        ></textarea>
+      ) : (
+        <input
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
+          id={name}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          required={required}
+        />
+      )}
+    </div>
+  );
+};
+
+// Main Component
+function ContactUs() {
+  const [formState, setFormState] = useState({
     name: "",
     email: "",
     phone: "",
-    service: "",
+    subject: "",
     message: "",
   });
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name || formData.name.length < 2) {
-      newErrors.name = "Name must be at least 2 characters.";
-    }
-    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address.";
-    }
-    if (!formData.phone || formData.phone.length < 10) {
-      newErrors.phone = "Please enter a valid phone number.";
-    }
-    if (!formData.service) {
-      newErrors.service = "Please select a service.";
-    }
-    if (!formData.message || formData.message.length < 10) {
-      newErrors.message = "Message must be at least 10 characters.";
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  const [formStatus, setFormStatus] = useState({
+    isSubmitting: false,
+    isSubmitted: false,
+    error: null,
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      setIsSubmitting(true);
+    setFormStatus({ isSubmitting: true, isSubmitted: false, error: null });
 
-      // Simulate API call
-      setTimeout(() => {
-        console.log(formData);
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          message: "",
-        });
-      }, 1500);
-    }
+    // Simulate form submission
+    setTimeout(() => {
+      setFormStatus({ isSubmitting: false, isSubmitted: true, error: null });
+      setFormState({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    }, 1500);
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 ">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white">
-        <div className="absolute inset-0 z-0 opacity-40 ">
-          <img
-            src={Officeimage}
-            alt="Contact us"
-            className="object-cover h-80 w-full "
-          />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-24 flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl text-slate-200">
-            Get in touch with our team to discuss your security needs
-          </p>
+      <section className="relative bg-cover bg-center text-white py-28 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-0"></div>
+        <motion.div
+          className="absolute inset-0 z-0"
+          initial={{ scale: 1.2, opacity: 0.7 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+          style={{
+            backgroundImage: `url(${ContactUsImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <motion.h1
+            className="text-4xl md:text-6xl  text-red-600 font-bold mb-6"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Get In Touch
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            We're here to answer any questions you have about our services.
+            Reach out to us and we'll respond as soon as we can.
+          </motion.p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 p-6 rounded-lg text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-8 w-8 text-blue-600"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Call Us</h3>
-              <p className="text-gray-600 mb-4">
-                Our team is available to answer your calls 24/7
-              </p>
-              <Link
-                href="tel:+15551234567"
-                className="text-blue-600 font-medium hover:underline"
-              >
-                +91 9811580318
-              </Link>
+      <AnimatedSection>
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="inline-block p-2 px-4 bg-red-50 rounded-full text-red-600 font-medium text-sm mb-4">
+              Contact Information
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+              Reach Out To Us
+            </h2>
+            <div className="w-20 h-1 bg-red-500 mx-auto mb-12 rounded-full"></div>
 
-            <div className="bg-slate-50 p-6 rounded-lg text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-8 w-8 text-blue-600"
-                >
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-4">
-                Send us an email and we'll respond promptly
-              </p>
-              <Link
-                href="mailto:info@secureforce.com"
-                className="text-blue-600 font-medium hover:underline"
-              >
-                sales@growelsecuritas4u.com
-              </Link>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-lg text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-8 w-8 text-blue-600"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-2">Visit Us</h3>
-              <p className="text-gray-600 mb-4">
-                Our headquarters is located in the heart of the city
-              </p>
-              <address className="not-italic text-blue-600 font-medium">
-                Growel Complex ,Dadri Road,
-                <br></br> Sector-41, Noida-201303
-              </address>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form and Map */}
-      <section className="py-12 md:py-16 bg-slate-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <h2 className="text-3xl text-red-500 font-bold mb-6">
-                Get a Free Quote
-              </h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Fill out the form below to request a quote or inquire about our
-                services. Our team will get back to you as soon as possible.
-              </p>
-
-              {isSuccess ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-12 w-12 text-green-500 mx-auto mb-4"
-                  >
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                    <polyline points="22 4 12 14.01 9 11.01" />
-                  </svg>
-                  <h3 className="text-xl font-bold text-green-800 mb-2">
-                    Message Sent Successfully!
-                  </h3>
-                  <p className="text-green-700 mb-4">
-                    Thank you for contacting us. One of our representatives will
-                    get back to you shortly.
-                  </p>
-                  <button
-                    onClick={() => setIsSuccess(false)}
-                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md font-medium"
-                  >
-                    Send Another Message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Name"
-                        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
-                          errors.name ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      {errors.name && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {errors.name}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="email@example.com"
-                        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
-                          errors.email ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      {errors.email && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {errors.email}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="mobile number"
-                        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
-                          errors.phone ? "border-red-500" : "border-gray-300"
-                        }`}
-                      />
-                      {errors.phone && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {errors.phone}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="service"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Service Interested In
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
-                          errors.service ? "border-red-500" : "border-gray-300"
-                        }`}
-                      >
-                        <option value="">Select a service</option>
-                        <option value="security-guards">Security Guards</option>
-                        <option value="housekeeping">Housekeeping Staff</option>
-                        <option value="bouncers">Bouncers</option>
-                        <option value="armed-personnel">Armed Personnel</option>
-                        <option value="event-security">Event Security</option>
-                        <option value="other">Other Services</option>
-                      </select>
-                      {errors.service && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {errors.service}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Please provide details about your security needs..."
-                      rows="5"
-                      className={`w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition ${
-                        errors.message ? "border-red-500" : "border-gray-300"
-                      }`}
-                    ></textarea>
-                    {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">
-                        {errors.message}
-                      </p>
-                    )}
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium disabled:opacity-70"
-                  >
-                    {isSubmitting ? "Sending..." : "Submit Request"}
-                  </button>
-                </form>
-              )}
-            </div>
-
-            {/* Map and Office Hours */}
-            <div className="bg-slate-200 h-[400px] w-full rounded-lg mb-8 flex items-center justify-center">
-              <iframe
-                width="100%"
-                height="100%"
-                className="rounded-lg"
-                scrolling="no"
-                marginHeight="0"
-                marginWidth="0"
-                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Growel%20Complex,%20Main,%20Dadri%20Main%20Rd,%20Block%20I,%20Sector%2041,%20Noida,%20Uttar%20Pradesh%20201303+(Growel%20Securitas%20&amp;%20Manpower%20Management%20Services%20Pvt.%20Ltd.)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <ContactInfoCard
+                icon={<MapPin size={24} />}
+                title="Our Location"
+                details={["123 Construction Way", "Building Heights, NY 10001"]}
+                delay={0.1}
+              />
+              <ContactInfoCard
+                icon={<Phone size={24} />}
+                title="Phone Number"
+                details={["+1 (555) 123-4567", "+1 (555) 765-4321"]}
+                delay={0.2}
+              />
+              <ContactInfoCard
+                icon={<Mail size={24} />}
+                title="Email Address"
+                details={["info@contractors.com", "support@contractors.com"]}
+                delay={0.3}
               />
             </div>
           </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Contact Form Section */}
+      <section className="py-20 px-6 bg-blue-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12">
+            <AnimatedSection delay={0.2}>
+              <div>
+                <div className="inline-block p-2 px-4 bg-red-50 rounded-full text-red-600 font-medium text-sm mb-4">
+                  Send Message
+                </div>
+                <h2 className="text-3xl font-bold mb-6 text-gray-800">
+                  Drop Us a Line
+                </h2>
+                <div className="w-20 h-1 bg-red-500 mb-8 rounded-full"></div>
+                <p className="text-gray-600 mb-8">
+                  Fill out the form below and our team will get back to you
+                  within 24 hours. We're excited to hear from you and discuss
+                  your project needs.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <div className="p-2 bg-red-50 rounded-full text-red-500 mr-4 mt-1">
+                      <Building size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 mb-1">
+                        Office Hours
+                      </h3>
+                      <p className="text-gray-600">
+                        Monday - Friday: 9:00 AM - 6:00 PM
+                      </p>
+                      <p className="text-gray-600">
+                        Saturday: 10:00 AM - 2:00 PM
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="p-2 bg-red-50 rounded-full text-red-500 mr-4 mt-1">
+                      <Users size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 mb-1">
+                        Customer Support
+                      </h3>
+                      <p className="text-gray-600">
+                        24/7 emergency support available
+                      </p>
+                      <p className="text-gray-600">
+                        Regular inquiries: 1-2 business days
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <div className="p-2 bg-red-50 rounded-full text-red-500 mr-4 mt-1">
+                      <MessageSquare size={20} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800 mb-1">
+                        Follow Up
+                      </h3>
+                      <p className="text-gray-600">
+                        Our team will follow up with you within 24 hours of
+                        receiving your message.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.4}>
+              <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                {formStatus.isSubmitted ? (
+                  <motion.div
+                    className="text-center py-10"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="inline-flex items-center justify-center p-4 bg-green-50 rounded-full text-green-500 mb-6">
+                      <CheckCircle size={32} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                      Message Sent Successfully!
+                    </h3>
+                    <p className="text-gray-600 mb-6">
+                      Thank you for reaching out. We've received your message
+                      and will get back to you shortly.
+                    </p>
+                    <button
+                      onClick={() =>
+                        setFormStatus((prev) => ({
+                          ...prev,
+                          isSubmitted: false,
+                        }))
+                      }
+                      className="inline-block bg-red-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-red-700 transition-all duration-300"
+                    >
+                      Send Another Message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <FormInput
+                        label="Full Name"
+                        name="name"
+                        placeholder="name"
+                        value={formState.name}
+                        onChange={handleChange}
+                        required
+                      />
+                      <FormInput
+                        label="Email Address"
+                        type="email"
+                        name="email"
+                        placeholder="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <FormInput
+                        label="Phone Number"
+                        type="tel"
+                        name="phone"
+                        placeholder="phone number"
+                        value={formState.phone}
+                        onChange={handleChange}
+                      />
+                      <FormInput
+                        label="Subject"
+                        name="subject"
+                        placeholder="Project Inquiry"
+                        value={formState.subject}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <FormInput
+                      label="Message"
+                      type="textarea"
+                      name="message"
+                      placeholder="Tell us about your project or inquiry..."
+                      value={formState.message}
+                      onChange={handleChange}
+                      required
+                    />
+
+                    <button
+                      type="submit"
+                      disabled={formStatus.isSubmitting}
+                      className="w-full bg-red-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-red-700 transition-all duration-300 flex items-center justify-center"
+                    >
+                      {formStatus.isSubmitting ? (
+                        <>
+                          <Loader2 size={20} className="mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send size={20} className="mr-2" />
+                          Send Message
+                        </>
+                      )}
+                    </button>
+                  </form>
+                )}
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24  bg-gradient-to-b from-blue-400 to-blue-500  text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl text-red-500 font-bold mb-6">
-            Ready to Secure Your Property?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Contact us today for a free consultation and quote. Our security
-            experts are standing by to assist you.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="tel:+15551234567"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-center"
-            >
-              Call Us Now
-            </Link>
-            <Link
-              href="mailto:info@secureforce.com"
-              className="bg-transparent border border-white text-white hover:bg-white/10 px-6 py-3 rounded-md font-medium text-center"
-            >
-              Email Us
-            </Link>
+      {/* Map Section */}
+      <AnimatedSection>
+        <section className="py-20 px-6 bg-white">
+          <div className="max-w-6xl mx-auto text-center">
+            <div className="inline-block p-2 px-4 bg-red-50 rounded-full text-red-600 font-medium text-sm mb-4">
+              Our Location
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+              Find Us On The Map
+            </h2>
+            <div className="w-20 h-1 bg-red-500 mx-auto mb-12 rounded-full"></div>
+
+            <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200 h-[400px] md:h-[500px]">
+              <iframe
+                width="100%"
+                height="100%"
+                className="w-full h-full"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Growel%20Complex,%20Main,%20Dadri%20Main%20Rd,%20Block%20I,%20Sector%2041,%20Noida,%20Uttar%20Pradesh%20201303+(Growel%20Securitas%20&amp;%20Manpower%20Management%20Services%20Pvt.%20Ltd.)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
+        </section>
+      </AnimatedSection>
+
+      {/* CTA Section */}
+      <section className="bg-red-600 py-16 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.h2
+            className="text-3xl font-bold mb-4 text-white"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Ready to Secure Your Property?
+          </motion.h2>
+          <motion.p
+            className="text-lg mb-8 text-white/90"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Get a free consultation and custom quote today — our expert security
+            team is ready 24/7 to protect what matters most to you.
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Link
+              href="/about"
+              className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300"
+            >
+              Learn More About Us
+            </Link>
+            <Link
+              href="#"
+              className="inline-block bg-transparent text-white border-2 border-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-all duration-300"
+            >
+              View Our Projects
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>
   );
 }
+
+export default ContactUs;

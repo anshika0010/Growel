@@ -49,12 +49,12 @@ const Slider = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <button className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-100 transition">
                     Get a Free Quote
                   </button>
                 </Link>
                 <Link to="/services">
-                  <button className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                  <button className="px-6 py-3 border border-red-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
                     Explore Our Services
                   </button>
                 </Link>
@@ -81,12 +81,12 @@ const Slider = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <button className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-100 transition">
                     Get a Free Quote
                   </button>
                 </Link>
                 <Link to="/services">
-                  <button className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                  <button className="px-6 py-3 border border-red-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
                     Explore Our Services
                   </button>
                 </Link>
@@ -113,12 +113,12 @@ const Slider = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <button className="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-100 transition">
                     Get a Free Quote
                   </button>
                 </Link>
                 <Link to="/services">
-                  <button className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                  <button className="px-6 py-3 border border-red-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
                     Explore Our Services
                   </button>
                 </Link>

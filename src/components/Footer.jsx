@@ -1,11 +1,13 @@
-"use client";
-import logo from "/images/logoai.png";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import {
-  Shield,
+  ArrowRight,
   Mail,
   Phone,
   MapPin,
+  Clock,
+  Shield,
+  Users,
+  Award,
   Facebook,
   Twitter,
   Linkedin,
@@ -13,57 +15,87 @@ import {
 } from "lucide-react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Subscribed:", email);
+    setEmail("");
+    alert("Thanks for subscribing to Growel Securitas updates!");
+  };
+
   return (
-    <footer className="bg-slate-900 text-slate-200">
-      <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Company Overview */}
+    <footer className="relative bg-gradient-to-br from-blue-900 to-red-900 text-white">
+      <div className="h-2 w-full bg-gradient-to-r from-red-600 to-red-800"></div>
+
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Growel" className="h-28" />
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold flex items-center">
+                <Shield className="mr-2 h-6 w-6 text-red-500" />
+                <span>Growel Securitas</span>
+              </h2>
+              <p className="mt-1 text-sm text-slate-400">
+                Manpower Management Pvt Ltd
+              </p>
             </div>
-            <p className="text-slate-400 mb-6">
-              Professional security manpower services providing trained
-              personnel for all your security needs.
+            <p className="mb-6 text-slate-300">
+              Providing professional security services and manpower solutions
+              with integrity, reliability and excellence since 1995.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-slate-400 hover:text-blue-600">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-blue-600">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-blue-600">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="#" className="text-slate-400 hover:text-blue-600">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </Link>
+            <div className="flex items-center space-x-4">
+              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, idx) => (
+                <a
+                  href="#"
+                  key={idx}
+                  className="group flex h-9 w-9 items-center justify-center rounded-full bg-slate-800 transition hover:bg-red-600"
+                >
+                  <Icon className="h-4 w-4 text-slate-300 group-hover:text-white" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Our Services</h3>
+            <h3 className="mb-6 text-lg font-semibold relative inline-block">
+              Our Services
+              <span className="absolute -bottom-1 left-0 h-0.5 w-12 bg-red-600"></span>
+            </h3>
             <ul className="space-y-3">
               {[
-                { name: "Security Guards", href: "/services#security-guards" },
-                { name: "Housekeeping Staff", href: "/services#housekeeping" },
-                { name: "Bouncers", href: "/services#bouncers" },
-                { name: "Armed Personnel", href: "/services#armed-personnel" },
-                { name: "Event Security", href: "/services#event-security" },
-              ].map((service) => (
-                <li key={service.name}>
-                  <Link
-                    href={service.href}
-                    className="text-slate-400 hover:text-blue-600"
+                {
+                  icon: <Shield className="h-4 w-4" />,
+                  label: "Security Services",
+                },
+                {
+                  icon: <Users className="h-4 w-4" />,
+                  label: "Manpower Outsourcing",
+                },
+                {
+                  icon: <Award className="h-4 w-4" />,
+                  label: "Professional Staffing",
+                },
+                {
+                  icon: <Clock className="h-4 w-4" />,
+                  label: "24/7 Security Solutions",
+                },
+              ].map((service, idx) => (
+                <li key={idx}>
+                  <a
+                    href="#"
+                    className="group flex items-center text-slate-300 hover:text-white"
                   >
-                    {service.name}
-                  </Link>
+                    <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-red-500 group-hover:bg-red-600 group-hover:text-white">
+                      {service.icon}
+                    </span>
+                    <span className="relative">
+                      {service.label}
+                      <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -71,57 +103,135 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-6 text-lg font-semibold relative inline-block">
+              Quick Links
+              <span className="absolute -bottom-1 left-0 h-0.5 w-12 bg-red-600"></span>
+            </h3>
+            <ul className="grid grid-cols-1 gap-3">
               {[
-                { name: "Home", href: "/" },
-                { name: "About Us", href: "/about" },
-                { name: "Testimonials", href: "/testimonials" },
-                { name: "Contact Us", href: "/contact" },
-                { name: "Careers", href: "/careers" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-400 hover:text-blue-600"
+                "About Us",
+                "Our Team",
+
+                "Testimonials",
+
+                "Blog & News",
+                "FAQ",
+                "Contact Us",
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    href="#"
+                    className="group inline-flex items-center text-slate-300 hover:text-white"
                   >
-                    {link.name}
-                  </Link>
+                    <ArrowRight className="mr-2 h-3 w-3 text-red-500 group-hover:translate-x-1 transition-transform" />
+                    <span className="relative">
+                      {link}
+                      <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info & Newsletter */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-                <span className="text-slate-400">
-                  Growel Complex ,Dadri Road, Sector-41, Noida-201303
+            <h3 className="mb-6 text-lg font-semibold relative inline-block">
+              Contact Us
+              <span className="absolute -bottom-1 left-0 h-0.5 w-12 bg-red-600"></span>
+            </h3>
+            <ul className="space-y-4 text-slate-300">
+              <li className="flex items-start">
+                <MapPin className="mr-3 h-5 w-5 text-red-500" />
+                <span>
+                  Corporate Office, 123 Security Plaza,
+                  <br />
+                  Sector 5, Noida, Uttar Pradesh, India
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-blue-600 shrink-0" />
-                <span className="text-slate-400">+91 9811580318</span>
+              <li className="flex items-center">
+                <Phone className="mr-3 h-5 w-5 text-red-500" />
+                <a href="tel:+911234567890" className="hover:text-white">
+                  +91 123 456 7890
+                </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-blue-600 shrink-0" />
-                <span className="text-slate-400">
-                  sales@growelsecuritas4u.com
-                </span>
+              <li className="flex items-center">
+                <Mail className="mr-3 h-5 w-5 text-red-500" />
+                <a
+                  href="mailto:info@growelsecuritas.com"
+                  className="hover:text-white"
+                >
+                  info@growelsecuritas.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <Clock className="mr-3 h-5 w-5 text-red-500" />
+                <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
               </li>
             </ul>
+
+            {/* Newsletter */}
+            {/* <form onSubmit={handleSubmit} className="mt-6">
+              <p className="mb-3 text-sm">Subscribe to our newsletter</p>
+              <div className="flex">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="Your email"
+                  className="w-full rounded-l-md bg-slate-800 text-white placeholder:text-slate-400 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <button
+                  type="submit"
+                  className="rounded-r-md bg-red-600 hover:bg-red-700 px-3 py-2"
+                >
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </form> */}
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="border-t border-slate-800 mt-12 pt-6 text-center text-sm text-slate-400">
-          <p>
-            &copy; {new Date().getFullYear()} Growel Securitas & Manpower
-            Management Services Pvt. Ltd. All rights reserved.
+        {/* Certifications */}
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {[
+              "ISO 9001:2015 Certified",
+              "PSARA Compliant",
+              "MSME Registered",
+              "Trusted by 500+ Clients",
+            ].map((text, idx) => (
+              <div
+                key={idx}
+                className="flex items-center rounded-lg bg-slate-800 px-4 py-2"
+              >
+                <Shield className="mr-2 h-5 w-5 text-red-500" />
+                <span className="text-sm font-medium">{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 border-t border-slate-800 pt-8 text-center">
+          <p className="text-sm text-slate-400">
+            © {new Date().getFullYear()} Growel Securitas & Manpower Management
+            Pvt Ltd. All rights reserved.
           </p>
+          {/* <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs text-slate-500">
+            <a href="#" className="hover:text-red-500">
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a href="#" className="hover:text-red-500">
+              Terms of Service
+            </a>
+            <span>|</span>
+            <a href="#" className="hover:text-red-500">
+              Sitemap
+            </a>
+          </div> */}
         </div>
       </div>
     </footer>

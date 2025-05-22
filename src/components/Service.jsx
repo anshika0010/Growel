@@ -7,13 +7,13 @@ export default function ServicesPage() {
       <section className="relative bg-slate-900 text-white">
         <div className="absolute inset-0 z-0 opacity-30">
           <img
-            src="/placeholder.svg?height=600&width=1920"
+            src="https://4.bp.blogspot.com/-lHOQ3VZkGtQ/W3l2Z8KwZuI/AAAAAAAAB8M/RVT1Xf0qoAYQ0sgiuaMRIvCWMU-aplT7gCLcBGAs/s1600/How-to-Improve-Manpower-Services-in-India.jpg"
             alt="Security services"
             className="object-cover"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-24 flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-red-600">
             Our Security Services
           </h1>
           <p className="text-lg md:text-xl mb-8 max-w-2xl text-slate-200">
@@ -801,7 +801,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-blue-600 text-white">
+      <section className="py-16 md:py-24 bg-red-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Enhance Your Security?
@@ -813,7 +813,7 @@ export default function ServicesPage() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-center"
+              className="bg-white text-red-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-center"
             >
               Get a Free Quote
             </Link>
