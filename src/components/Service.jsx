@@ -12,7 +12,7 @@ export default function ServicesPage() {
       <section className="relative bg-slate-900 text-white">
         <div className="absolute inset-0 z-0 opacity-30">
           <img
-            src="https://4.bp.blogspot.com/-lHOQ3VZkGtQ/W3l2Z8KwZuI/AAAAAAAAB8M/RVT1Xf0qoAYQ0sgiuaMRIvCWMU-aplT7gCLcBGAs/s1600/How-to-Improve-Manpower-Services-in-India.jpg"
+            src={securityservices}
             alt="Security services"
             className="object-cover"
           />
