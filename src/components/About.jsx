@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
 // import { Button } from "@/components/ui/button"
 import { Shield, Award, CheckCircle, Target, Briefcase } from "lucide-react";
-
+import Image from "/images/Group.webp";
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white">
-        <div className="absolute inset-0 z-0 opacity-30">
+      <section className="relative bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-30 h-full w-full">
           <img
-            src="/placeholder.svg?height=600&width=1920"
+            src={Image}
             alt="Security team"
-            fill
-            className="object-cover"
-            priority
+            className="object-cover w-full h-full"
           />
         </div>
         <div className="container relative z-10 py-20 md:py-24 flex flex-col items-center text-center">

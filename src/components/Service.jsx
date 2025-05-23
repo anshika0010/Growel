@@ -9,12 +9,12 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white">
-        <div className="absolute inset-0 z-0 opacity-30">
+      <section className="relative bg-slate-900 text-white overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-30 h-full w-full">
           <img
             src={securityservices}
             alt="Security services"
-            className="object-contain w-full h-full"
+            className="object-cover w-full h-full"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-24 flex flex-col items-center text-center">
@@ -27,6 +27,7 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
+
       {<Servicescard />}
 
       {/* Security Guards */}
@@ -34,7 +35,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
+              <div className="inline-flex items-center gap-2 bg-red-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -187,7 +188,7 @@ export default function ServicesPage() {
             </div>
 
             <div>
-              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-blue-600 font-medium text-sm mb-4">
+              <div className="inline-flex items-center gap-2 bg-red-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -319,7 +320,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
+              <div className="inline-flex items-center gap-2 bg-red-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"

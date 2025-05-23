@@ -27,7 +27,9 @@ const Navbar = () => {
           <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
             <span className="font-bold text-white">GS</span>
           </div>
-          <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1>
+          <Link to="/">
+            <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}

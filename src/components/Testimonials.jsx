@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Quote } from "lucide-react";
 import Video from "./Video";
 import Images from "./Images";
+import servicehero from "../assets/Images/servicehero.png";
 
 const testimonials = [
   {
@@ -29,11 +30,11 @@ const testimonials = [
 export default function TestimonialsPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <section className="relative h-[60vh] md:h-[80vh] bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+      <section className="relative h-[60vh] md:h-[80vh] bg-gradient-to-r from-blue-400 to-blue-700 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-50">
           <img
-            src="/placeholder.svg"
+            src={servicehero}
             alt="Security background"
             className="object-cover w-full h-full"
           />
