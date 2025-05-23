@@ -13,15 +13,13 @@ const videos = [
     title: "Residential Security",
     description:
       "Discover our comprehensive residential security services for homes and apartments.",
-    thumbnail:
-      "/placeholder.svg?height=720&width=1280&text=Video%20Thumbnail%202", // Image thumbnail
+    thumbnail: Video1,
   },
   {
     title: "Event Security Management",
     description:
       "See how we handle security for large-scale events and ensure attendee safety.",
-    thumbnail:
-      "/placeholder.svg?height=720&width=1280&text=Video%20Thumbnail%203", // Image thumbnail
+    thumbnail: Video1,
   },
 ];
 

@@ -29,25 +29,6 @@ const testimonials = [
 export default function TestimonialsPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      {/* <section className="relative bg-slate-900 text-white">
-        <div className="absolute inset-0 z-0 opacity-30">
-          <img
-            src="/placeholder.svg?height=600&width=1920"
-            alt="Client testimonials"
-            className="object-cover"
-          />
-        </div>
-        <div className="container relative z-10 py-20 md:py-24 flex flex-col items-center text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Client Testimonials
-          </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl text-slate-200">
-            Hear what our clients have to say about our security manpower
-            services
-          </p>
-        </div>
-      </section> */}
       <section className="relative h-[60vh] md:h-[80vh] bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-20">
@@ -153,12 +134,6 @@ export default function TestimonialsPage() {
             ))}
           </div> */}
           {<Images />}
-          {/* Call to Action */}
-          <div className="text-center mt-10">
-            <button className="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-6 py-2 rounded-md font-medium transition-colors">
-              View Full Gallery
-            </button>
-          </div>
         </div>
       </section>
 

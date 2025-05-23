@@ -7,6 +7,7 @@ import Services from "./components/Service";
 import ContactPage from "./components/Contact";
 import AboutPage from "./components/About";
 import TestimonialsPage from "./components/Testimonials";
+import Allsecurtyguard from "./components/Allsecurityguard";
 
 function App() {
   return (
@@ -20,7 +21,11 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route
+              path="/all-types-of-security"
+              element={<Allsecurtyguard />}
+            />
+            <Route path="/gallery" element={<TestimonialsPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>

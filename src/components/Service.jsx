@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-
+import Servicescard from "./Servicescard";
+import securityservices from "../assets/Images/securityservices.jpeg";
+import housekeeping from "../assets/Images/housekeeping.jpeg";
+import eventsecurity from "../assets/Images/eventsecurity1.png";
+import armedsecurity from "../assets/Images/armedsecurity.webp";
+import pantryImage from "../assets/Images/pantryservices.jpg";
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -22,31 +27,14 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
-
-      {/* Services Introduction */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4">
-              Comprehensive Security Solutions
-            </h2>
-            <p className="text-lg text-gray-600">
-              At SecureForce, we offer a wide range of security manpower
-              services designed to meet the diverse needs of our clients. From
-              residential and commercial security to event management and
-              personal protection, our highly trained personnel are equipped to
-              handle any security challenge.
-            </p>
-          </div>
-        </div>
-      </section>
+      {<Servicescard />}
 
       {/* Security Guards */}
       <section id="security-guards" className="py-12 md:py-16 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-blue-600 font-medium text-sm mb-4">
+              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -83,7 +71,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -105,7 +93,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -127,7 +115,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -149,7 +137,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -168,14 +156,18 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium inline-block"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Security Guards
               </Link>
             </div>
 
             <div className="order-1 lg:order-2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <img src="" alt="Security guards" fill className="object-cover" />
+              <img
+                src={securityservices}
+                alt="Security services"
+                className="object-cover h-full w-full"
+              />
             </div>
           </div>
         </div>
@@ -187,10 +179,10 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src=""
+                src={housekeeping}
                 alt="Housekeeping staff"
                 fill
-                className="object-cover"
+                className="object-cover h-full w-full"
               />
             </div>
 
@@ -231,7 +223,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -252,7 +244,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -274,7 +266,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -296,7 +288,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -313,7 +305,7 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium inline-block"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Housekeeping Staff
               </Link>
@@ -327,7 +319,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-blue-600 font-medium text-sm mb-4">
+              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -365,7 +357,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -386,7 +378,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -407,7 +399,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -428,7 +420,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -444,14 +436,18 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium inline-block"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
-                Request Bouncers
+                Request Security
               </Link>
             </div>
 
             <div className="order-1 lg:order-2 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-              <img src="" alt="Event security" fill className="object-cover" />
+              <img
+                src={eventsecurity}
+                alt="Event security"
+                className="object-cover h-full w-full"
+              />
             </div>
           </div>
         </div>
@@ -463,15 +459,15 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src="/placeholder.svg?height=400&width=600"
+                src={armedsecurity}
                 alt="Armed security"
                 fill
-                className="object-cover"
+                className="object-fit h-full w-full"
               />
             </div>
 
             <div>
-              <div className="inline-flex items-center gap-2 bg-blue-100 px-3 py-1 rounded-full text-blue-600 font-medium text-sm mb-4">
+              <div className="inline-flex items-center gap-2 bg-red-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -507,7 +503,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -531,7 +527,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -553,7 +549,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -577,7 +573,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5 text-blue-600 shrink-0 mt-0.5"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -594,7 +590,7 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium inline-block"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Armed Personnel
               </Link>
@@ -602,7 +598,144 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <section id="pantry-services" className="py-12 md:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
+              <img
+                src={pantryImage}
+                alt="Pantry Services"
+                className="object-cover h-full w-full"
+              />
+            </div>
 
+            <div>
+              <div className="inline-flex items-center gap-2 bg-red-100 px-3 py-1 rounded-full text-red-600 font-medium text-sm mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                >
+                  <path d="M12 22c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9z" />
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Pantry Services</span>
+              </div>
+              <h2 className="text-3xl font-bold mb-4">
+                Professional Pantry Services
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Our pantry services provide seamless support for your workplace
+                or residence, ensuring a clean, organized, and welcoming
+                environment with refreshments, supplies, and attentive service.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <div>
+                    <h3 className="font-semibold">Refreshment Management</h3>
+                    <p className="text-gray-600">
+                      Supplying and managing beverages and snacks for staff and
+                      visitors.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <div>
+                    <h3 className="font-semibold">Inventory Control</h3>
+                    <p className="text-gray-600">
+                      Maintaining stock of pantry supplies to avoid shortages.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <div>
+                    <h3 className="font-semibold">Hygiene and Cleanliness</h3>
+                    <p className="text-gray-600">
+                      Ensuring the pantry area is clean, tidy, and
+                      well-maintained.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-5 w-5 text-red-600 shrink-0 mt-0.5"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <div>
+                    <h3 className="font-semibold">Customer Service</h3>
+                    <p className="text-gray-600">
+                      Friendly and attentive staff to assist with pantry needs
+                      and requests.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/contact"
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
+              >
+                Request Pantry Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Additional Services */}
       <section id="additional-services" className="py-12 md:py-16 bg-slate-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -633,7 +766,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -651,7 +784,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -667,7 +800,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -693,7 +826,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -709,7 +842,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -727,7 +860,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -753,7 +886,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -769,7 +902,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
@@ -787,7 +920,7 @@ export default function ServicesPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4 text-blue-600"
+                    className="h-4 w-4 text-red-600"
                   >
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />

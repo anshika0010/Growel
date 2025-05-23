@@ -318,7 +318,7 @@ const WhyChooseUsSection = () => {
               whileTap={{ scale: 0.95 }}
               className="rounded-full border border-slate-300 bg-white px-8 py-3 font-medium text-slate-900 hover:border-red-600 hover:text-red-600"
             >
-              Download Company Profile
+              Contact Us
             </motion.button>
           </div>
         </motion.div>

@@ -1,38 +1,50 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Shield, Award, Users, Building, CheckCircle } from "lucide-react";
+import { Shield, Award, Users, CheckCircle, ShieldCheck } from "lucide-react";
+import teluslogo from "../assets/Images/teluslogo.png";
+import intechlogo from "../assets/Images/intechlogo.png";
+import sunlordlogo from "../assets/Images/sunlordlog.jpeg";
+import voltkonlogo from "../assets/Images/voltkonlogo.png";
+import xavientlogo from "../assets/Images/xavientlogo.jpeg";
+import cosmoslogo from "../assets/Images/cosmos.jpeg";
+import apolislogo from "../assets/Images/apolis.jpeg";
+import advancedlogo from "../assets/Images/advancedlogo.png";
+import gkopticlogo from "../assets/Images/gkopticlogo.jpeg";
+import palica from "../assets/Images/palica.jpeg";
+import tricon from "../assets/Images/tricon.png";
 
 const Trusted = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   const trustedCompanies = [
-    { name: "Tech Solutions Inc.", industry: "Technology" },
-    { name: "Global Finance Ltd.", industry: "Banking" },
-    { name: "Metro Hospitals", industry: "Healthcare" },
-    { name: "Horizon Hotels", industry: "Hospitality" },
-    { name: "Pinnacle Properties", industry: "Real Estate" },
-    { name: "Evergreen Retail", industry: "Retail" },
-    { name: "Skyline Manufacturing", industry: "Manufacturing" },
-    { name: "Quantum Logistics", industry: "Logistics" },
-    { name: "Elite Educational Institutes", industry: "Education" },
-    { name: "Secure Pharmaceuticals", industry: "Pharmaceutical" },
+    { name: "Telus Digital Solutions", logo: teluslogo },
+    { name: "Global Finance Ltd.", logo: intechlogo },
+    { name: "Sunlord Industries", logo: sunlordlogo },
+    { name: "Voltkon Industries", logo: voltkonlogo },
+    { name: "Xavient Industries", logo: xavientlogo },
+    { name: "Cosmos Technologies", logo: cosmoslogo },
+    { name: "Apolis", logo: apolislogo },
+    { name: "Advanced Systems", logo: advancedlogo },
+    { name: "GK Optic Solutions", logo: gkopticlogo },
+    { name: "Palica Ventures", logo: palica },
+    { name: "Tricon Infotech", logo: tricon },
   ];
 
   const stats = [
     {
-      icon: <Building className="h-6 w-6" />,
+      icon: <Users className="h-6 w-6" />,
       value: "500+",
       label: "Clients Nationwide",
     },
     {
       icon: <Users className="h-6 w-6" />,
-      value: "5,000+",
+      value: "2000+",
       label: "Security Personnel",
     },
     {
       icon: <CheckCircle className="h-6 w-6" />,
-      value: "25+",
+      value: "10+",
       label: "Years of Excellence",
     },
     {
@@ -53,14 +65,10 @@ const Trusted = () => {
       { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      if (sectionRef.current) {
-        observer.disconnect();
-      }
+      if (sectionRef.current) observer.disconnect();
     };
   }, []);
 
@@ -69,7 +77,6 @@ const Trusted = () => {
       ref={sectionRef}
       className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-20"
     >
-      {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -82,7 +89,7 @@ const Trusted = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-6">
-        {/* Section Header */}
+        {/* Header */}
         <div className="mb-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,7 +123,7 @@ const Trusted = () => {
           </motion.p>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -132,7 +139,7 @@ const Trusted = () => {
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-lg shadow-slate-100"
             >
-              <div className="mb-3 rounded-full bg-red-50 p-3 text-red-600">
+              <div className="mb-3 rounded-md bg-red-50  text-red-600">
                 {stat.icon}
               </div>
               <h3 className="text-3xl font-bold text-slate-900">
@@ -143,7 +150,7 @@ const Trusted = () => {
           ))}
         </motion.div>
 
-        {/* Trusted Companies Carousel */}
+        {/* Esteemed Clients Carousel */}
         <div className="mb-12 text-center">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -172,15 +179,23 @@ const Trusted = () => {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="flex h-24 w-48 flex-col items-center justify-center rounded-lg bg-white p-4 shadow-md"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-red-600">
-                        <Shield className="h-6 w-6" />
+                      <div className="flex h-24 w-20 items-center justify-center rounded-md ">
+                        {company.logo ? (
+                          <img
+                            src={company.logo}
+                            alt={`${company.name} logo`}
+                            className="h-18 w-28 object-contain"
+                          />
+                        ) : (
+                          <Shield className="h-6 w-6 text-red-600" />
+                        )}
                       </div>
                       <p className="mt-2 text-sm font-medium text-slate-900">
                         {company.name}
                       </p>
-                      <p className="text-xs text-slate-500">
+                      {/* <p className="text-xs text-slate-500">
                         {company.industry}
-                      </p>
+                      </p> */}
                     </motion.div>
                   ))}
                 </div>
