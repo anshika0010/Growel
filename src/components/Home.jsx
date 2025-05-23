@@ -6,6 +6,7 @@ import Trusted from "./Trusted";
 import WhyChooseUsSection from "./WhyChooseUsSection";
 import OurServices from "./OurServices";
 import ScrollingImageGallery from "./ScrollingImageGallery";
+import Servicescard from "./Servicescard";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       />
       {<Slider />}
       {<OurServices />}
+      {<Servicescard />}
       {<ScrollingImageGallery />}
       {<WhyChooseUsSection />}
       {/* Testimonials */}
