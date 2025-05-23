@@ -14,7 +14,7 @@ export default function ServicesPage() {
           <img
             src={securityservices}
             alt="Security services"
-            className="object-cover"
+            className="object-contain w-full h-full"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-24 flex flex-col items-center text-center">
