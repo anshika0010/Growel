@@ -9,8 +9,10 @@ import OurServices from "./OurServices";
 const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-
+      <meta
+        name="keywords"
+        content="security, bouncers, security guards, security services"
+      />
       {<Slider />}
       {/* Services Overview */}
       {<OurServices />}

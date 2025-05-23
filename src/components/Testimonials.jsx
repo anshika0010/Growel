@@ -2,80 +2,27 @@ import { Link } from "react-router-dom";
 // import { Button } from "@/components/ui/button"
 // import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react";
+import Video from "./Video";
+import Images from "./Images";
 
-// Sample testimonial data
 const testimonials = [
   {
-    id: 1,
+    quote:
+      "Growel Securitas has transformed our security infrastructure. Their team is professional, responsive, and always goes above and beyond.",
     name: "John Smith",
-    position: "Facility Manager, ABC Corporation",
-    content:
-      "SecureForce has provided exceptional security services for our corporate headquarters. Their guards are professional, vigilant, and always punctual. We've seen a significant improvement in overall security since partnering with them.",
-    image: "/placeholder.svg?height=80&width=80&text=JS",
+    title: "CEO, Tech Innovations",
   },
   {
-    id: 2,
+    quote:
+      "We've been using Growel Securitas for our residential complex for over 3 years. Their attention to detail and quick response time is impressive.",
     name: "Sarah Johnson",
-    position: "Event Director, City Convention Center",
-    content:
-      "We've used SecureForce's bouncers for multiple high-profile events, and they've consistently delivered outstanding service. Their team is well-trained in crowd management and conflict resolution, ensuring our events run smoothly.",
-    image: "/placeholder.svg?height=80&width=80&text=SJ",
+    title: "Property Manager, Green Residences",
   },
   {
-    id: 3,
+    quote:
+      "The security personnel from Growel Securitas are well-trained, courteous, and vigilant. They've significantly improved our mall's security posture.",
     name: "Michael Chen",
-    position: "Property Manager, Lakeside Residences",
-    content:
-      "The security guards from SecureForce have been instrumental in enhancing the safety of our residential complex. Their attention to detail and proactive approach to security has given our residents peace of mind.",
-    image: "/placeholder.svg?height=80&width=80&text=MC",
-  },
-  {
-    id: 4,
-    name: "Emily Rodriguez",
-    position: "Operations Director, Retail Chain",
-    content:
-      "We've been working with SecureForce for our retail locations for over 3 years. Their security personnel are not only effective at preventing theft but also provide excellent customer service, representing our brand well.",
-    image: "/placeholder.svg?height=80&width=80&text=ER",
-  },
-  {
-    id: 5,
-    name: "David Wilson",
-    position: "CEO, Tech Startup",
-    content:
-      "As a growing company, we needed flexible security solutions that could scale with us. SecureForce understood our unique needs and provided customized security services that have grown alongside our business.",
-    image: "/placeholder.svg?height=80&width=80&text=DW",
-  },
-  {
-    id: 6,
-    name: "Jennifer Lee",
-    position: "Hotel General Manager",
-    content:
-      "Our hotel requires security staff who can maintain a safe environment while also providing excellent guest service. SecureForce's personnel have exceeded our expectations in both areas, becoming valued extensions of our team.",
-    image: "/placeholder.svg?height=80&width=80&text=JL",
-  },
-  {
-    id: 7,
-    name: "Robert Thompson",
-    position: "School Principal",
-    content:
-      "The safety of our students and staff is our top priority. SecureForce has provided us with dedicated security personnel who understand the unique challenges of school security and have become trusted members of our community.",
-    image: "/placeholder.svg?height=80&width=80&text=RT",
-  },
-  {
-    id: 8,
-    name: "Amanda Garcia",
-    position: "Bank Branch Manager",
-    content:
-      "In the financial sector, security is paramount. SecureForce's armed personnel are highly trained, professional, and provide the level of security and confidence our institution requires.",
-    image: "/placeholder.svg?height=80&width=80&text=AG",
-  },
-  {
-    id: 9,
-    name: "Thomas Brown",
-    position: "Construction Site Manager",
-    content:
-      "Our construction sites require vigilant security to prevent theft and vandalism. SecureForce's mobile patrols and on-site guards have significantly reduced incidents and protected our valuable equipment and materials.",
-    image: "/placeholder.svg?height=80&width=80&text=TB",
+    title: "Operations Director, Metro Mall",
   },
 ];
 
@@ -83,7 +30,7 @@ export default function TestimonialsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white">
+      {/* <section className="relative bg-slate-900 text-white">
         <div className="absolute inset-0 z-0 opacity-30">
           <img
             src="/placeholder.svg?height=600&width=1920"
@@ -100,10 +47,33 @@ export default function TestimonialsPage() {
             services
           </p>
         </div>
-      </section>
+      </section> */}
+      <section className="relative h-[60vh] md:h-[80vh] bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="/placeholder.svg"
+            alt="Security background"
+            className="object-cover w-full h-full"
+          />
+        </div>
 
+        {/* Content */}
+        <div className="container mx-auto px-4 h-full flex flex-col justify-center items-start text-white relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Securing Your <span className="text-red-500">Future</span>
+          </h1>
+          <p className="text-xl md:text-2xl max-w-2xl mb-8">
+            Professional security services tailored to your needs with
+            cutting-edge technology and trained personnel.
+          </p>
+          <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md font-medium transition-colors">
+            Learn More
+          </button>
+        </div>
+      </section>
       {/* Testimonials Grid */}
-      <section className="py-12 md:py-16">
+      {/* <section className="py-12 md:py-16">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
@@ -142,123 +112,115 @@ export default function TestimonialsPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Featured Case Studies */}
-      <section className="py-12 md:py-16 bg-slate-50">
-        <div className="container">
+      </section> */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Featured Case Studies</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Explore how our security solutions have made a difference for
-              these clients.
+            <h2 className="text-3xl md:text-4xl font-bold text-navy-blue mb-4">
+              Our Security Solutions
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Explore our comprehensive security solutions designed to protect
+              what matters most to you.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Case Study 1 */}
-            <div className="overflow-hidden border-none shadow-lg">
-              <div className="relative h-64">
-                <img
-                  src="/placeholder.svg?height=256&width=600&text=Corporate Security"
-                  alt="Corporate security case study"
-                  className="object-cover"
-                />
+          {/* Cards Grid */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <div
+                key={item}
+                className="group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={`/placeholder.svg?height=600&width=800&text=Security%20Image%20${item}`}
+                    alt={`Security solution ${item}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div className="p-6 bg-white">
+                  <h3 className="text-xl font-semibold text-navy-blue mb-2">
+                    Security Solution {item}
+                  </h3>
+                  <p className="text-gray-600">
+                    Advanced security measures to protect your assets and ensure
+                    peace of mind.
+                  </p>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">
-                  Corporate Headquarters Security
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  How we implemented a comprehensive security solution for a
-                  Fortune 500 company's headquarters, reducing security
-                  incidents by 75%.
-                </p>
-                <button>
-                  <Link href="#">Read Case Study</Link>
-                </button>
-              </div>
-            </div>
-
-            {/* Case Study 2 */}
-            <div className="overflow-hidden border-none shadow-lg">
-              <div className="relative h-64">
-                <img
-                  src="/placeholder.svg?height=256&width=600&text=Event Security"
-                  alt="Event security case study"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">
-                  Large-Scale Event Security
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Our approach to securing a major music festival with over
-                  50,000 attendees, ensuring a safe and enjoyable experience for
-                  all.
-                </p>
-                <button>
-                  <Link href="#">Read Case Study</Link>
-                </button>
-              </div>
-            </div>
+            ))}
+          </div> */}
+          {<Images />}
+          {/* Call to Action */}
+          <div className="text-center mt-10">
+            <button className="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-6 py-2 rounded-md font-medium transition-colors">
+              View Full Gallery
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Video Testimonials */}
-      <section className="py-12 md:py-16">
-        <div className="container">
+      <section className="py-16 bg-blue-900 text-white">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Video Testimonials</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Watch our clients share their experiences with SecureForce.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="max-w-3xl mx-auto text-blue-100">
+              Hear from businesses and individuals who trust Growel Securitas
+              for their security needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[...Array(3)].map((_, i) => (
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
               <div
-                key={i}
-                className="bg-slate-100 rounded-lg overflow-hidden shadow-lg"
+                key={index}
+                className="bg-white text-gray-800 p-8 rounded-lg shadow-lg relative"
               >
-                <div className="relative h-48 bg-slate-200 flex items-center justify-center">
-                  <img
-                    src={`/placeholder.svg?height=192&width=384&text=Video ${
-                      i + 1
-                    }`}
-                    alt={`Video testimonial ${i + 1}`}
-                    width={384}
-                    height={192}
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="h-16 w-16 rounded-full bg-primary/90 flex items-center justify-center cursor-pointer">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-white"
-                      >
-                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                      </svg>
-                    </div>
-                  </div>
+                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M7 11l5-5m0 0l5 5m-5-5v12"
+                    />
+                  </svg>
                 </div>
-                <div className="p-6">
-                  <h3 className="font-bold mb-2">
-                    Client Success Story {i + 1}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Hear how our security services made a difference for this
-                    client.
-                  </p>
+                <div className="text-center">
+                  <p className="italic mb-4">"{testimonial.quote}"</p>
+
+                  {/* Stars */}
+                  <div className="flex items-center justify-center space-x-1 mb-2">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <svg
+                        key={star}
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 text-yellow-500"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+
+                  {/* Client Info */}
+                  <div>
+                    <h4 className="font-semibold">{testimonial.name}</h4>
+                    <p className="text-sm text-gray-500">{testimonial.title}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -266,22 +228,25 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
+      {<Video />}
+
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container text-center">
+      <section className="py-16 bg-blue-900 text-white">
+        <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Join Our Satisfied Clients
+            Ready to Enhance Your Security?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Experience the SecureForce difference for yourself. Contact us today
-            for a consultation and free quote.
+          <p className="max-w-2xl mx-auto mb-8 text-blue-100">
+            Contact us today for a free security assessment and discover how
+            Growel Securitas can provide tailored security solutions for your
+            needs.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button>
-              <Link href="/contact">Get a Free Quote</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-md font-medium transition-colors">
+              Contact Us
             </button>
-            <button className="bg-transparent border-white text-white hover:bg-white/10">
-              <Link href="/services">Explore Our Services</Link>
+            <button className="bg-transparent border-2 border-white hover:bg-white hover:text-navy-blue text-white px-8 py-3 rounded-md font-medium transition-colors">
+              Request Demo
             </button>
           </div>
         </div>

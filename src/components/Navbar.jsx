@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "About Us", href: "/about" },
-    { name: "Testimonials", href: "/testimonials" },
+    { name: "Gallery", href: "/testimonials" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -23,10 +23,12 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur shadow-sm">
       <div className="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link to="/">
-          <img src={logo} alt="Growel" className="h-28" />
-        </Link>
+        <div className="flex items-center space-x-2">
+          <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+            <span className="font-bold text-white">GS</span>
+          </div>
+          <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
@@ -148,3 +150,61 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// import React from "react";
+// import { Link } from "react-router-dom"; // Use this if you're using React Router
+
+// const Header = () => {
+//   return (
+//     <header className="bg-navy-blue text-white">
+//       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+//         {/* Logo and Brand Name */}
+//         <div className="flex items-center space-x-2">
+//           <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
+//             <span className="font-bold text-white">GS</span>
+//           </div>
+//           <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1>
+//         </div>
+
+//         {/* Navigation Links */}
+//         <nav className="hidden md:flex space-x-6">
+//           <Link to="/" className="hover:text-blue-300 transition-colors">
+//             Home
+//           </Link>
+//           <Link to="/services" className="hover:text-blue-300 transition-colors">
+//             Services
+//           </Link>
+//           <Link to="/gallery" className="hover:text-blue-300 transition-colors">
+//             Gallery
+//           </Link>
+//           <Link to="/testimonials" className="hover:text-blue-300 transition-colors">
+//             Testimonials
+//           </Link>
+//           <Link to="/contact" className="hover:text-blue-300 transition-colors">
+//             Contact
+//           </Link>
+//         </nav>
+
+//         {/* Mobile Menu Button */}
+//         <button className="md:hidden text-white">
+//           <svg
+//             xmlns="http://www.w3.org/2000/svg"
+//             className="h-6 w-6"
+//             fill="none"
+//             viewBox="0 0 24 24"
+//             stroke="currentColor"
+//           >
+//             <path
+//               strokeLinecap="round"
+//               strokeLinejoin="round"
+//               strokeWidth={2}
+//               d="M4 6h16M4 12h16M4 18h16"
+//             />
+//           </svg>
+//         </button>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;
