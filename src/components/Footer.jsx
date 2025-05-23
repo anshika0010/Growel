@@ -108,29 +108,22 @@ export default function Footer() {
               <span className="absolute -bottom-1 left-0 h-0.5 w-12 bg-red-600"></span>
             </h3>
             <ul className="grid grid-cols-1 gap-3">
-              {[
-                "About Us",
-                "Our Team",
-
-                "Testimonials",
-
-                "Blog & News",
-                "FAQ",
-                "Contact Us",
-              ].map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href="#"
-                    className="group inline-flex items-center text-slate-300 hover:text-white"
-                  >
-                    <ArrowRight className="mr-2 h-3 w-3 text-red-500 group-hover:translate-x-1 transition-transform" />
-                    <span className="relative">
-                      {link}
-                      <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-                    </span>
-                  </a>
-                </li>
-              ))}
+              {["About Us", "Our Team", "Gallery", "Contact Us"].map(
+                (link, idx) => (
+                  <li key={idx}>
+                    <a
+                      href="#"
+                      className="group inline-flex items-center text-slate-300 hover:text-white"
+                    >
+                      <ArrowRight className="mr-2 h-3 w-3 text-red-500 group-hover:translate-x-1 transition-transform" />
+                      <span className="relative">
+                        {link}
+                        <span className="absolute -bottom-0.5 left-0 h-0.5 w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                      </span>
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -144,15 +137,14 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="mr-3 h-5 w-5 text-red-500" />
                 <span>
-                  Corporate Office, 123 Security Plaza,
-                  <br />
-                  Sector 5, Noida, Uttar Pradesh, India
+                  Address: Growel Complex, Main, Dadri Main Rd, Block I,
+                  <br></br>Sector 41, Noida, Uttar Pradesh 201303
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 h-5 w-5 text-red-500" />
-                <a href="tel:+911234567890" className="hover:text-white">
-                  +91 123 456 7890
+                <a href="tel:+9195826 68190" className="hover:text-white">
+                  +9195826 68190
                 </a>
               </li>
               <li className="flex items-center">

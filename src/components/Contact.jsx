@@ -194,19 +194,24 @@ function ContactUs() {
               <ContactInfoCard
                 icon={<MapPin size={24} />}
                 title="Our Location"
-                details={["123 Construction Way", "Building Heights, NY 10001"]}
+                details={[
+                  "Growel Complex",
+                  "Main, Dadri Main Rd",
+                  "Block I, Sector 41",
+                  "Noida, Uttar Pradesh 201303",
+                ]}
                 delay={0.1}
               />
               <ContactInfoCard
                 icon={<Phone size={24} />}
                 title="Phone Number"
-                details={["+1 (555) 123-4567", "+1 (555) 765-4321"]}
+                details={["9582668293"]}
                 delay={0.2}
               />
               <ContactInfoCard
                 icon={<Mail size={24} />}
                 title="Email Address"
-                details={["info@contractors.com", "support@contractors.com"]}
+                details={["info@growelsecuritas.com"]}
                 delay={0.3}
               />
             </div>
