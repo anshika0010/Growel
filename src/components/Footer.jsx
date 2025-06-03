@@ -13,7 +13,7 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
-
+import logo from "/images/logo.webp";
 export default function Footer() {
   const [email, setEmail] = useState("");
 
@@ -33,10 +33,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold flex items-center">
-                <Shield className="mr-2 h-6 w-6 text-red-500" />
-                <span>Growel Securitas</span>
-              </h2>
+              <img src={logo} className="h-12" alt="logo" />
               <p className="mt-1 text-sm text-slate-400">
                 Manpower Management Pvt Ltd
               </p>

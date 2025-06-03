@@ -5,6 +5,7 @@ import { Quote } from "lucide-react";
 import Video from "./Video";
 import Images from "./Images";
 import servicehero from "../assets/Images/servicehero.png";
+import Video2 from "./Video";
 
 const testimonials = [
   {

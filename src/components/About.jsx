@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 // import { Button } from "@/components/ui/button"
 import { Shield, Award, CheckCircle, Target, Briefcase } from "lucide-react";
 import Image from "/images/Group.webp";
+import image2 from "../assets/Images/securityservices.jpeg";
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -61,12 +62,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src={image2}
                 alt="Company history"
-                fill
-                className="object-cover"
+                className="object-contain "
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function AboutPage() {
       <section className="py-12 md:py-16 bg-slate-50">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-3xl font-bold text-red-500 mb-4">
               Our Mission, Vision & Values
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -87,7 +87,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-red-200 p-8 rounded-lg shadow-lg">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Target className="h-8 w-8 text-primary" />
               </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-red-200 p-8 rounded-lg shadow-lg">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Award className="h-8 w-8 text-primary" />
               </div>
@@ -112,7 +112,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="bg-red-200 p-8 rounded-lg shadow-lg">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                 <Shield className="h-8 w-8 text-primary" />
               </div>
@@ -311,10 +311,10 @@ export default function AboutPage() {
 
             <div className="order-1 lg:order-2 relative h-[500px] rounded-lg overflow-hidden shadow-xl">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src={Image}
                 alt="Security approach"
                 fill
-                className="object-cover"
+                className="object-contain h-full w-full"
               />
             </div>
           </div>
@@ -322,7 +322,7 @@ export default function AboutPage() {
       </section>
 
       {/* Certifications */}
-      <section className="py-12 md:py-16">
+      {/* <section className="py-12 md:py-16">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
@@ -378,11 +378,11 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container text-center">
+        <div className="container text-center bg-red-600 p-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Work with Us?
           </h2>
@@ -390,7 +390,7 @@ export default function AboutPage() {
             Contact us today to discuss how our professional security services
             can meet your needs.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          {/* <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button size="lg" variant="secondary" asChild>
               <Link href="/contact">Get a Free Quote</Link>
             </button>
@@ -402,7 +402,7 @@ export default function AboutPage() {
             >
               <Link href="/services">Explore Our Services</Link>
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

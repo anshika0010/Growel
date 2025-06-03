@@ -1,7 +1,8 @@
 import React from "react";
 import { Play } from "lucide-react"; // Make sure lucide-react is installed
 import Video1 from "../assets/Videos/video1.mp4";
-
+import Video2 from "../assets/Videos/video2.mp4";
+import Video3 from "../assets/Videos/video3.mp4";
 const videos = [
   {
     title: "Corporate Security Solutions",
@@ -13,13 +14,13 @@ const videos = [
     title: "Residential Security",
     description:
       "Discover our comprehensive residential security services for homes and apartments.",
-    thumbnail: Video1,
+    thumbnail: Video2,
   },
   {
     title: "Event Security Management",
     description:
       "See how we handle security for large-scale events and ensure attendee safety.",
-    thumbnail: Video1,
+    thumbnail: Video3,
   },
 ];
 

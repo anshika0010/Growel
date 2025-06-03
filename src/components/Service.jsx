@@ -305,7 +305,7 @@ export default function ServicesPage() {
               </div>
 
               <Link
-                href="/contact"
+                to="/contact"
                 className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Housekeeping Staff
@@ -436,7 +436,7 @@ export default function ServicesPage() {
               </div>
 
               <Link
-                href="/contact"
+                to="/contact"
                 className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Security
@@ -590,7 +590,7 @@ export default function ServicesPage() {
               </div>
 
               <Link
-                href="/contact"
+                to="/contact"
                 className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Armed Personnel
@@ -728,7 +728,7 @@ export default function ServicesPage() {
               </div>
 
               <Link
-                href="/contact"
+                to="/contact"
                 className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-medium inline-block"
               >
                 Request Pantry Services
