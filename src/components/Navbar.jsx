@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import logo from "../assets/logo.webp";
-import logo from "/images/logoai.png";
+import logo from "/images/logo.webp";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,11 +24,9 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur shadow-sm">
       <div className="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
-            <span className="font-bold text-white">GS</span>
-          </div>
           <Link to="/">
-            <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1>
+            {/* <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1> */}
+            <img src={logo} alt="logo" className="w-24" />
           </Link>
         </div>
 

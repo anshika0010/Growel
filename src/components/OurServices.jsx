@@ -129,7 +129,7 @@ const OurServices = () => {
               whileHover={{ y: -5 }}
               className="group cursor-pointer rounded-xl border-2 border-red-300g-white p-6 shadow-lg hover:border-red-200 transition-all duration-300"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700 group-hover:bg-red-100 group-hover:text-red-600 transition-all duration-300">
+              <div className="mb-4  flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700 group-hover:bg-red-100 group-hover:text-red-600 transition-all duration-300">
                 {service.icon}
               </div>
               <h3 className="mb-2 text-xl font-semibold text-slate-900">
