@@ -59,12 +59,12 @@ const Navbar = () => {
             </svg>
             <span>+91 9811580318 </span>
           </div>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-400 text-sm font-medium"
           >
             Get a Quote
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -134,10 +134,10 @@ const Navbar = () => {
               >
                 <path d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10v-2H9.42a1 1 0 01-.94-.66L14 9h4a1 1 0 000-2h-5.42" />
               </svg>
-              <span>+1 (555) 123-4567</span>
+              <span>+91 9811580318 </span>
             </div>
             <a
-              href="/contact"
+              to="/contact"
               className="w-full px-4 py-2 bg-blue-600 text-white rounded text-center hover:bg-blue-700 text-sm font-medium"
             >
               Get a Quote

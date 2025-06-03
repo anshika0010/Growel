@@ -45,7 +45,7 @@ const HomePage = () => {
                 Get a Free Quote
               </button>
             </Link>
-            <a href="tel:+15551234567">
+            <a href="tel:+919811580318">
               <button className="px-6 py-3 border bg-red-600 border-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">
                 Call Us Now
               </button>

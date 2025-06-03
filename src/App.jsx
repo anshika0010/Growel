@@ -9,9 +9,12 @@ import AboutPage from "./components/About";
 import TestimonialsPage from "./components/Testimonials";
 import Allsecurtyguard from "./components/Allsecurityguard";
 import { FaWhatsapp } from "react-icons/fa";
+import ScrollToTop from "./components/ScrollToTop";
+import AllPantryServices from "./components/AllPantryServices";
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
 
@@ -25,12 +28,16 @@ function App() {
               path="/all-types-of-security"
               element={<Allsecurtyguard />}
             />
+            <Route
+              path="/all-types-of-pantry"
+              element={<AllPantryServices />}
+            />
             <Route path="/gallery" element={<TestimonialsPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
         <a
-          href="https://wa.me/919876543210" // Replace with your actual WhatsApp number
+          href="https://wa.me/919811580318" // Replace with your actual WhatsApp number
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition duration-300"

@@ -136,10 +136,10 @@ const OurServices = () => {
                 {service.title}
               </h3>
               <p className="mb-4 text-slate-600">{service.shortDesc}</p>
-              <div className="flex items-center text-sm font-medium text-slate-500 group-hover:text-red-500 transition-colors duration-300">
+              {/* <div className="flex items-center text-sm font-medium text-slate-500 group-hover:text-red-500 transition-colors duration-300">
                 Learn more
                 <ChevronRight className="ml-1 h-4 w-4" />
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </motion.div>

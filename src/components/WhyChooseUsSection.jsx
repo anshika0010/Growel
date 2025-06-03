@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Shield,
   Clock,
@@ -208,17 +209,19 @@ const WhyChooseUsSection = () => {
               ))}
             </div>
 
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={isVisible ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-8 flex items-center rounded-full bg-red-600 px-6 py-3 font-medium text-white shadow-lg shadow-red-200 hover:bg-red-700"
-            >
-              Learn About Our Process
-              <ChevronRight className="ml-2 h-4 w-4" />
-            </motion.button>
+            <Link to="/contact">
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={isVisible ? { opacity: 1 } : {}}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-8 flex items-center rounded-full bg-red-600 px-6 py-3 font-medium text-white shadow-lg shadow-red-200 hover:bg-red-700"
+              >
+                Learn About Our Process
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </motion.button>
+            </Link>
           </motion.div>
 
           <motion.div
