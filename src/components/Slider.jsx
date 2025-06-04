@@ -39,7 +39,7 @@ const Slider = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="container mx-auto relative z-10 py-20 md:py-32 flex flex-col items-center text-center">
+            <div className="container mx-auto relative z-10 py-8 md:py-8 flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
                 Professional Security Manpower Services You Can Trust
               </h1>
@@ -49,12 +49,12 @@ const Slider = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-red-200 transition">
                     Get a Free Quote
                   </button>
                 </Link>
                 <Link to="/services">
-                  <button className="px-6 py-3 border border-red-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-red-200 transition">
                     Explore Our Services
                   </button>
                 </Link>
@@ -71,7 +71,7 @@ const Slider = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="container mx-auto relative z-10 py-20 md:py-32 flex flex-col items-center text-center">
+            <div className="container mx-auto relative z-10 py-8 md:py-8 flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
                 Professional Security Manpower Services You Can Trust
               </h1>
@@ -81,12 +81,12 @@ const Slider = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-red-200 transition">
                     Get a Free Quote
                   </button>
                 </Link>
                 <Link to="/services">
-                  <button className="px-6 py-3 border border-red-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-red-200 transition">
                     Explore Our Services
                   </button>
                 </Link>
@@ -103,7 +103,7 @@ const Slider = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="container mx-auto relative z-10 py-20 md:py-32 flex flex-col items-center text-center">
+            <div className="container mx-auto relative z-10 py-8 md:py-8 flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
                 Professional Security Manpower Services You Can Trust
               </h1>
@@ -113,12 +113,12 @@ const Slider = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/contact">
-                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-100 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-red-200 transition">
                     Get a Free Quote
                   </button>
                 </Link>
                 <Link to="/services">
-                  <button className="px-6 py-3 border border-red-600 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                  <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-red-200 transition">
                     Explore Our Services
                   </button>
                 </Link>
