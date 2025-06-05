@@ -4,47 +4,47 @@
 >
   <!-- Home -->
   <url>
-    <loc>https://www.growelsecuritas.com/</loc>
+    <loc>https://www.growelsecuritas.in/</loc>
     <priority>1.00</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <!-- About Page -->
   <url>
-    <loc>https://www.growelsecuritas.com/about</loc>
+    <loc>https://www.growelsecuritas.in/about</loc>
     <priority>0.80</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Services Page -->
   <url>
-    <loc>https://www.growelsecuritas.com/services</loc>
+    <loc>https://www.growelsecuritas.in/services</loc>
     <priority>0.90</priority>
     <changefreq>weekly</changefreq>
   </url>
 
   <!-- Contact Page -->
   <url>
-    <loc>https://www.growelsecuritas.com/contact</loc>
+    <loc>https://www.growelsecuritas.in/contact</loc>
     <priority>0.85</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- All Types of Security -->
   <url>
-    <loc>https://www.growelsecuritas.com/all-types-of-security</loc>
+    <loc>https://www.growelsecuritas.in/all-types-of-security</loc>
     <priority>0.75</priority>
   </url>
 
   <!-- All Types of Pantry -->
   <url>
-    <loc>https://www.growelsecuritas.com/all-types-of-pantry</loc>
+    <loc>https://www.growelsecuritas.in/all-types-of-pantry</loc>
     <priority>0.75</priority>
   </url>
 
   <!-- Gallery / Testimonials -->
   <url>
-    <loc>https://www.growelsecuritas.com/gallery</loc>
+    <loc>https://www.growelsecuritas.in/gallery</loc>
     <priority>0.70</priority>
     <changefreq>monthly</changefreq>
   </url>
