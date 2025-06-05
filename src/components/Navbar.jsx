@@ -22,8 +22,8 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/90 backdrop-blur shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 flex h-16 items-center justify-between">
-        <div className="flex items-center space-x-2">
+      <div className="max-w-7xl mx-auto px-1 flex h-16 items-center justify-between">
+        <div className="flex items-center ">
           <Link to="/">
             {/* <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1> */}
             <img src={logo} alt="logo" className="w-24" />

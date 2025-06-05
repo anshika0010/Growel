@@ -39,7 +39,7 @@ const Slider = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="container mx-auto relative z-10 py-8 md:py-8 flex flex-col items-center text-center">
+            <div className="container mx-auto relative z-10 py-10 md:py-10 flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
                 Professional Security Manpower Services You Can Trust
               </h1>
@@ -71,7 +71,7 @@ const Slider = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="container mx-auto relative z-10 py-8 md:py-8 flex flex-col items-center text-center">
+            <div className="container mx-auto relative z-10 py-10 md:py-10 flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
                 Professional Security Manpower Services You Can Trust
               </h1>
@@ -103,7 +103,7 @@ const Slider = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="container mx-auto relative z-10 py-8 md:py-8 flex flex-col items-center text-center">
+            <div className="container mx-auto relative z-10 py-10 md:py-10 flex flex-col items-center text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
                 Professional Security Manpower Services You Can Trust
               </h1>
