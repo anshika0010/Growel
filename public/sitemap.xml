@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+  <!-- Home -->
+  <url>
+    <loc>https://www.growelsecuritas.com/</loc>
+    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.growelsecuritas.com/about</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.growelsecuritas.com/services</loc>
+    <priority>0.90</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.growelsecuritas.com/contact</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- All Types of Security -->
+  <url>
+    <loc>https://www.growelsecuritas.com/all-types-of-security</loc>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- All Types of Pantry -->
+  <url>
+    <loc>https://www.growelsecuritas.com/all-types-of-pantry</loc>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Gallery / Testimonials -->
+  <url>
+    <loc>https://www.growelsecuritas.com/gallery</loc>
+    <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+</urlset>
