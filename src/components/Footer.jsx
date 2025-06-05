@@ -158,27 +158,6 @@ export default function Footer() {
                 <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
               </li>
             </ul>
-
-            {/* Newsletter */}
-            {/* <form onSubmit={handleSubmit} className="mt-6">
-              <p className="mb-3 text-sm">Subscribe to our newsletter</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="Your email"
-                  className="w-full rounded-l-md bg-slate-800 text-white placeholder:text-slate-400 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-red-500"
-                />
-                <button
-                  type="submit"
-                  className="rounded-r-md bg-red-600 hover:bg-red-700 px-3 py-2"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
-            </form> */}
           </div>
         </div>
 
@@ -208,19 +187,6 @@ export default function Footer() {
             © {new Date().getFullYear()} Growel Securitas & Manpower Management
             Pvt Ltd. All rights reserved.
           </p>
-          {/* <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs text-slate-500">
-            <a href="#" className="hover:text-red-500">
-              Privacy Policy
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:text-red-500">
-              Terms of Service
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:text-red-500">
-              Sitemap
-            </a>
-          </div> */}
         </div>
       </div>
     </footer>

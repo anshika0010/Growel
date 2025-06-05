@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 // import logo from "../assets/logo.webp";
 import logo from "/images/logo.webp";
 import { Link } from "react-router-dom";
+import { Phone } from "lucide-react";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [pathname, setPathname] = useState("/");
@@ -48,15 +49,7 @@ const Navbar = () => {
         {/* Desktop Contact + CTA */}
         <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
-            <svg
-              className="h-4 w-4 text-blue-600"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10v-2H9.42a1 1 0 01-.94-.66L14 9h4a1 1 0 000-2h-5.42" />
-            </svg>
+            <Phone className="mr-3 h-5 w-5 text-red-500" />
             <span>+91 9811580318 </span>
           </div>
           <Link
@@ -125,15 +118,7 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex items-center gap-2 text-sm text-gray-700">
-              <svg
-                className="h-4 w-4 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M3 5h2l3.6 7.59-1.35 2.44A1 1 0 008 17h10v-2H9.42a1 1 0 01-.94-.66L14 9h4a1 1 0 000-2h-5.42" />
-              </svg>
+              <Phone className="mr-3 h-5 w-5 text-red-500" />
               <span>+91 9811580318 </span>
             </div>
             <a
@@ -150,61 +135,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-// import React from "react";
-// import { Link } from "react-router-dom"; // Use this if you're using React Router
-
-// const Header = () => {
-//   return (
-//     <header className="bg-navy-blue text-white">
-//       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-//         {/* Logo and Brand Name */}
-//         <div className="flex items-center space-x-2">
-//           <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
-//             <span className="font-bold text-white">GS</span>
-//           </div>
-//           <h1 className="text-xl md:text-2xl font-bold">Growel Securitas</h1>
-//         </div>
-
-//         {/* Navigation Links */}
-//         <nav className="hidden md:flex space-x-6">
-//           <Link to="/" className="hover:text-blue-300 transition-colors">
-//             Home
-//           </Link>
-//           <Link to="/services" className="hover:text-blue-300 transition-colors">
-//             Services
-//           </Link>
-//           <Link to="/gallery" className="hover:text-blue-300 transition-colors">
-//             Gallery
-//           </Link>
-//           <Link to="/testimonials" className="hover:text-blue-300 transition-colors">
-//             Testimonials
-//           </Link>
-//           <Link to="/contact" className="hover:text-blue-300 transition-colors">
-//             Contact
-//           </Link>
-//         </nav>
-
-//         {/* Mobile Menu Button */}
-//         <button className="md:hidden text-white">
-//           <svg
-//             xmlns="http://www.w3.org/2000/svg"
-//             className="h-6 w-6"
-//             fill="none"
-//             viewBox="0 0 24 24"
-//             stroke="currentColor"
-//           >
-//             <path
-//               strokeLinecap="round"
-//               strokeLinejoin="round"
-//               strokeWidth={2}
-//               d="M4 6h16M4 12h16M4 18h16"
-//             />
-//           </svg>
-//         </button>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;
