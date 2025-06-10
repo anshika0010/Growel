@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 // import { Button } from "@/components/ui/button"
 import { Shield, Award, CheckCircle, Target, Briefcase } from "lucide-react";
+import ceoimage from "../assets/Images/ceoimage.jpeg";
+import gaurav from "../assets/Images/gaurav.jpeg";
 import Image from "/images/Group.webp";
 import image2 from "../assets/Images/securityservices.jpeg";
 import { Helmet } from "react-helmet";
@@ -172,27 +174,20 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Team Member 1 */}
               <div className="text-center">
-                <div className="relative h-64 w-64 mx-auto mb-6 rounded-lg overflow-hidden">
-                  <img
-                    src="/placeholder.svg?height=256&width=256&text=CEO"
-                    alt="CEO"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative h-auto w-64 mx-auto mb-6 rounded-lg overflow-hidden">
+                  <img src={gaurav} alt="CEO" fill className="object-cover" />
                 </div>
-                <h3 className="text-xl font-bold">John Anderson</h3>
-                <p className="text-primary font-medium mb-3">
-                  Chief Executive Officer
-                </p>
+                <h3 className="text-xl font-bold">Gaurav Yadav</h3>
+                <p className="text-primary font-medium mb-3">Director</p>
                 <p className="text-muted-foreground mb-4">
-                  With over 25 years of experience in security management, John
-                  leads our company with a focus on operational excellence and
-                  client satisfaction.
+                  With over 10 years of experience in security management,
+                  Gaurav leads our company with a focus on operational
+                  excellence and client satisfaction.
                 </p>
               </div>
 
               {/* Team Member 2 */}
-              <div className="text-center">
+              {/* <div className="text-center">
                 <div className="relative h-64 w-64 mx-auto mb-6 rounded-lg overflow-hidden">
                   <img
                     src="/placeholder.svg?height=256&width=256&text=COO"
@@ -210,26 +205,24 @@ export default function AboutPage() {
                   security services meet the highest standards of quality and
                   efficiency.
                 </p>
-              </div>
+              </div> */}
 
               {/* Team Member 3 */}
               <div className="text-center">
-                <div className="relative h-64 w-64 mx-auto mb-6 rounded-lg overflow-hidden">
+                <div className="relative h-auto w-64 mx-auto mb-6 rounded-lg overflow-hidden">
                   <img
-                    src="/placeholder.svg?height=256&width=256&text=Director"
-                    alt="Training Director"
+                    src={ceoimage}
+                    alt=" Director"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-bold">Michael Rodriguez</h3>
-                <p className="text-primary font-medium mb-3">
-                  Director of Training
-                </p>
+                <h3 className="text-xl font-bold">M.D R.K YADAV</h3>
+                <p className="text-primary font-medium mb-3">Director</p>
                 <p className="text-muted-foreground mb-4">
-                  Michael leads our comprehensive training programs, ensuring
-                  that all our security personnel are equipped with the skills
-                  and knowledge they need to excel.
+                  M.D R.K Yadav leads our comprehensive training programs,
+                  ensuring that all our security personnel are equipped with the
+                  skills and knowledge they need to excel.
                 </p>
               </div>
             </div>
