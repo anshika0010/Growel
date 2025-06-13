@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import { Quote } from "lucide-react";
 import Video from "./Video";
 import Images from "./Images";
-import servicehero from "../assets/Images/servicehero.png";
+import servicehero from "../assets/Images/GuardImage17.jpeg";
+
 import { Helmet } from "react-helmet";
 
 const testimonials = [
@@ -118,32 +119,6 @@ export default function TestimonialsPage() {
               </p>
             </div>
 
-            {/* Cards Grid */}
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={`/placeholder.svg?height=600&width=800&text=Security%20Image%20${item}`}
-                    alt={`Security solution ${item}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="p-6 bg-white">
-                  <h3 className="text-xl font-semibold text-navy-blue mb-2">
-                    Security Solution {item}
-                  </h3>
-                  <p className="text-gray-600">
-                    Advanced security measures to protect your assets and ensure
-                    peace of mind.
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div> */}
             {<Images />}
           </div>
         </section>

@@ -218,7 +218,10 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="text-xl font-bold">M.D R.K YADAV</h3>
-                <p className="text-primary font-medium mb-3">Director</p>
+                <p className="text-primary font-medium mb-3">
+                  {" "}
+                  Managing Director
+                </p>
                 <p className="text-muted-foreground mb-4">
                   M.D R.K Yadav leads our comprehensive training programs,
                   ensuring that all our security personnel are equipped with the

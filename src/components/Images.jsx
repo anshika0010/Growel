@@ -2,7 +2,7 @@ import React from "react";
 import GuardImage1 from "../assets/Images/GuardImage1.jpg";
 import GuardImage2 from "../assets/Images/GuardImage2.jpg";
 import GuardImage3 from "../assets/Images/GuardImage3.jpg";
-import GuardImage4 from "../assets/Images/GuardImage4.jpeg";
+import GuardImage4 from "../assets/Images/GuardImage17.jpeg";
 import GuardImage5 from "../assets/Images/GuardImage5.jpeg";
 import GuardImage6 from "../assets/Images/GuardImage6.jpeg";
 import GuardImage7 from "../assets/Images/GuardImage7.jpeg";

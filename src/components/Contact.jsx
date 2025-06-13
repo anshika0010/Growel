@@ -211,7 +211,7 @@ function ContactUs() {
                   details={[
                     "Growel Complex",
                     "Main, Dadri Main Rd",
-                    "Block I, Sector 41",
+                    "Block J, Sector 41",
                     "Noida, Uttar Pradesh 201303",
                   ]}
                   delay={0.1}
@@ -219,13 +219,13 @@ function ContactUs() {
                 <ContactInfoCard
                   icon={<Phone size={24} />}
                   title="Phone Number"
-                  details={["9582668293"]}
+                  details={["9582668192,9811580318"]}
                   delay={0.2}
                 />
                 <ContactInfoCard
                   icon={<Mail size={24} />}
                   title="Email Address"
-                  details={["info@growelsecuritas.com"]}
+                  details={["admin@growelsecuritas4u.in"]}
                   delay={0.3}
                 />
               </div>
