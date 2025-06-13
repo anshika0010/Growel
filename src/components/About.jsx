@@ -10,10 +10,10 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title>Growel Securitas – Security & Manpower Services in India</title>
+        <title>Growel Securitas & Manpower Management Pvt Ltd.</title>
         <meta
           name="description"
-          content="Growel Securitas provides trained security guards, bouncers, housekeeping staff, and event security services. Trusted by leading brands across India."
+          content="Growel Security is one of the Best NOIDA based Indian Private Security Service industrial security company and maintenance consultants and surveyors."
         />
         <link rel="canonical" href="https://growelsecuritas4u.in" />
       </Helmet>
