@@ -10,6 +10,15 @@ import {
   Calendar,
   FileSearch,
 } from "lucide-react";
+import GuardImage7 from "../assets/Images/GuardImage7.jpeg";
+import GuardImage8 from "../assets/Images/GuardImage8.jpeg";
+import GuardImage9 from "../assets/Images/GuardImage9.jpeg";
+import GuardImage10 from "../assets/Images/GuardImage10.jpeg";
+import GuardImage11 from "../assets/Images/GuardImage11.jpeg";
+import GuardImage12 from "../assets/Images/GuardImage12.jpeg";
+import GuardImage13 from "../assets/Images/GuardImage13.jpeg";
+import GuardImage14 from "../assets/Images/GuardImage14.jpeg";
+import GuardImage15 from "../assets/Images/GuardImage15.jpeg";
 
 const OurServices = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,6 +30,7 @@ const OurServices = () => {
       icon: <Building className="h-5 w-5" />,
       title: "Corporate Security",
       shortDesc: "Comprehensive security solutions for corporate environments",
+      bgImage: GuardImage7,
     },
     {
       id: "industrial-security",
@@ -28,30 +38,35 @@ const OurServices = () => {
       title: "Industrial Security",
       shortDesc:
         "Specialized security for manufacturing and industrial facilities",
+      bgImage: GuardImage9,
     },
     {
       id: "event-security",
       icon: <Calendar className="h-5 w-5" />,
       title: "Event Security",
       shortDesc: "Professional security personnel for events of all sizes",
+      bgImage: GuardImage10,
     },
     {
       id: "residential-security",
       icon: <Home className="h-5 w-5" />,
       title: "Residential Security",
       shortDesc: "Protecting homes, apartments, and residential complexes",
+      bgImage: GuardImage11,
     },
     {
       id: "manpower-outsourcing",
       icon: <Users className="h-5 w-5" />,
       title: "Manpower Outsourcing",
       shortDesc: "Qualified personnel for various organizational needs",
+      bgImage: GuardImage12,
     },
     {
       id: "security-consulting",
       icon: <FileSearch className="h-5 w-5" />,
       title: "Security Consulting",
       shortDesc: "Expert advice on security infrastructure and protocols",
+      bgImage: GuardImage13,
     },
   ];
 
@@ -113,33 +128,45 @@ const OurServices = () => {
           designed to meet the unique needs of your organization.
         </motion.p>
 
-        {/* Services Cards Only */}
+        {/* Service Cards */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          // initial={{ opacity: 0, y: 20 }}
+          // animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service, index) => (
             <motion.div
               key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group cursor-pointer rounded-xl border-2 border-red-300g-white p-6 shadow-lg hover:border-red-200 transition-all duration-300"
+              className="group cursor-pointer rounded-xl overflow-hidden shadow-lg hover:border-red-600 transition-all duration-300 border-2 border-red-200"
             >
-              <div className="mb-4  flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-700 group-hover:bg-red-100 group-hover:text-red-600 transition-all duration-300">
-                {service.icon}
+              {/* Image Section */}
+              <div
+                className="relative h-48 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${service.bgImage})`,
+                }}
+              >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-white/40 group-hover:bg-white/10 transition-all duration-300 z-0"></div>
+
+                {/* Icon */}
+                <div className="relative z-10 flex h-full items-center justify-center">
+                  <div className="h-12 w-12 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-red-100 group-hover:text-red-600 transition-all duration-300">
+                    {service.icon}
+                  </div>
+                </div>
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-slate-900">
-                {service.title}
-              </h3>
-              <p className="mb-4 text-slate-600">{service.shortDesc}</p>
-              {/* <div className="flex items-center text-sm font-medium text-slate-500 group-hover:text-red-500 transition-colors duration-300">
-                Learn more
-                <ChevronRight className="ml-1 h-4 w-4" />
-              </div> */}
+
+              {/* Text Below the Image */}
+              <div className="bg-white p-4">
+                <h3 className="mb-2 text-xl font-semibold text-red-600">
+                  {service.title}
+                </h3>
+                <p className="text-black">{service.shortDesc}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>
