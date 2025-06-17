@@ -295,7 +295,7 @@ const WhyChooseUsSection = () => {
         </motion.div>
 
         {/* Call to Action */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 1.4 }}
@@ -324,7 +324,7 @@ const WhyChooseUsSection = () => {
               Contact Us
             </motion.button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
