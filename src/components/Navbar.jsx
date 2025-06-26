@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-4">
           <div className="flex items-center gap-2 text-sm font-medium text-gray-700">
             <Phone className="mr-3 h-5 w-5 text-red-500" />
-            <span>+91 9811972456</span>
+            <span>+91 9811580318</span>
           </div>
           <Link
             to="/contact"
@@ -119,7 +119,7 @@ const Navbar = () => {
             ))}
             <div className="flex items-center gap-2 text-sm text-gray-700">
               <Phone className="mr-3 h-5 w-5 text-red-500" />
-              <span>+91 9811972456 </span>
+              <span>+91 9811580318 </span>
             </div>
             <a
               to="/contact"

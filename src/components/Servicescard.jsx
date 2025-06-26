@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Shield, Home, Coffee } from "lucide-react";
 import housekeeping from "../assets/Images/housekeeping.jpeg";
-import pantryservices from "../assets/Images/pantryservices.jpg";
+import pantryservices from "../assets/Images/pantryImage.jpeg";
 import securityservices from "../assets/Images/securityservices.jpeg";
 
 const Servicescard = () => {

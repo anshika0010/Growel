@@ -180,9 +180,9 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold">Gaurav Yadav</h3>
                 <p className="text-primary font-medium mb-3">Director</p>
                 <p className="text-muted-foreground mb-4">
-                  With over 10 years of experience in security management,
-                  Gaurav leads our company with a focus on operational
-                  excellence and client satisfaction.
+                  With over 7 years of experience in security management, Gaurav
+                  leads our company with a focus on operational excellence and
+                  client satisfaction.
                 </p>
               </div>
 
@@ -217,15 +217,20 @@ export default function AboutPage() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-xl font-bold">M.D R.K YADAV</h3>
+                <h3 className="text-xl font-bold">R.K YADAV</h3>
                 <p className="text-primary font-medium mb-3">
                   {" "}
                   Managing Director
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  M.D R.K Yadav leads our comprehensive training programs,
-                  ensuring that all our security personnel are equipped with the
-                  skills and knowledge they need to excel.
+                  He is the Owner of Growel Securitas. "Yadav has been in the
+                  Security business for 25+ years. Mr Yadav is Education
+                  B.sc,B.ed. He runs a professional organization dedicated to
+                  developing long-term client partnerships. It is his dedication
+                  to customer service that has driven the Growel reputation to
+                  being steadfast in its business ethic, never losing sight of
+                  the needs of his clients. Growel Securitas Has Over 20
+                  Security Expert On Staff.
                 </p>
               </div>
             </div>

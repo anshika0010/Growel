@@ -210,9 +210,10 @@ function ContactUs() {
                   title="Our Location"
                   details={[
                     "Growel Complex",
-                    "Main, Dadri Main Rd",
-                    "Block J, Sector 41",
+                    "2/34, Dadri Rd",
+                    "Block I, Sector 41",
                     "Noida, Uttar Pradesh 201303",
+                    "Near by HP Petrol Pump",
                   ]}
                   delay={0.1}
                 />

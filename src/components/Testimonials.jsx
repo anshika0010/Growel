@@ -7,25 +7,26 @@ import Images from "./Images";
 import servicehero from "../assets/Images/GuardImage17.jpeg";
 
 import { Helmet } from "react-helmet";
+import FireSafetyTrainingSection from "./FireSafetyTrainingSection";
 
 const testimonials = [
   {
     quote:
       "Growel Securitas has transformed our security infrastructure. Their team is professional, responsive, and always goes above and beyond.",
-    name: "John Smith",
-    title: "CEO, Tech Innovations",
+    name: "Mr. J.Shankar",
+    title: "CEO, Software Company",
   },
   {
     quote:
       "We've been using Growel Securitas for our residential complex for over 3 years. Their attention to detail and quick response time is impressive.",
-    name: "Sarah Johnson",
-    title: "Property Manager, Green Residences",
+    name: "Mr. Ankit Jain",
+    title: "Cosmos Group",
   },
   {
     quote:
       "The security personnel from Growel Securitas are well-trained, courteous, and vigilant. They've significantly improved our mall's security posture.",
-    name: "Michael Chen",
-    title: "Operations Director, Metro Mall",
+    name: "Mr. Gaurav Malhotra",
+    title: "G-Tech",
   },
 ];
 
@@ -120,6 +121,7 @@ export default function TestimonialsPage() {
             </div>
 
             {<Images />}
+            {<FireSafetyTrainingSection />}
           </div>
         </section>
 

@@ -201,6 +201,28 @@ const Trusted = () => {
                 </div>
               ))}
             </motion.div>
+            {/* Client Logos */}
+            {/* <div className="mb-16">
+              <h3 className="text-xl font-semibold text-gray-900 text-center mb-8">
+                Our Valued Clients
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+                {clients.map((client, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center border border-gray-100"
+                  >
+                    <Image
+                      src={client.logo || "/placeholder.svg"}
+                      alt={`${client.name} logo`}
+                      width={160}
+                      height={80}
+                      className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div> */}
           </div>
         </div>
 
