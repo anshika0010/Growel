@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ContactUsImage from "../../public/images/contact.jpg";
+import ButtonAnimation from "./ButtonAnimated";
 import {
   MapPin,
   Phone,
@@ -469,18 +470,18 @@ function ContactUs() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Link
+              {/* <Link
                 href="/about"
                 className="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-all duration-300"
               >
                 Learn More About Us
-              </Link>
-              <Link
-                href="#"
-                className="inline-block bg-transparent text-white border-2 border-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-all duration-300"
-              >
-                View Our Projects
-              </Link>
+              </Link> */}
+              <ButtonAnimation className="mt-6 rounded-full bg-white  border border-red-600 px-8 py-3 font-medium text-black shadow-lg shadow-red-200 transition-all ">
+                <Link to="/about">Learn more about us</Link>
+              </ButtonAnimation>
+              <ButtonAnimation className="mt-6 rounded-full bg-white  border border-red-600 px-8 py-3 font-medium text-black shadow-lg shadow-red-200 transition-all ">
+                <Link to="/">Go to home</Link>
+              </ButtonAnimation>
             </motion.div>
           </div>
         </section>

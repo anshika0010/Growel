@@ -2,9 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import pantryImg from "../assets/Images/pantryservices.jpg";
-import { Coffee } from "lucide-react";
-import HelmetExport from "react-helmet";
+import pantryImg from "../assets/Images/pantryImage.jpeg";
+import pantryImg2 from "../assets/Images/beverage.jpg";
+import pantryImg3 from "../assets/Images/guest.jpeg";
+
+import { Coffee, Utensils, Users } from "lucide-react";
+import { Helmet } from "react-helmet";
+import ButtonAnimation from "./ButtonAnimated";
+import { Link } from "react-router-dom";
 
 const AllPantryServices = () => {
   const [visible, setVisible] = useState(false);
@@ -19,25 +24,25 @@ const AllPantryServices = () => {
       id: 1,
       title: "Pantry Management",
       description:
-        "Boost operational efficiency with our reliable pantry staff trained for hospitality and office support.",
+        "Our staff ensures your office pantry remains clean, stocked, and functional at all times.",
       icon: <Coffee className="h-8 w-8" />,
       image: pantryImg,
     },
     {
-      id: 1,
-      title: "Pantry Management",
+      id: 2,
+      title: "Beverage Preparation",
       description:
-        "Boost operational efficiency with our reliable pantry staff trained for hospitality and office support.",
-      icon: <Coffee className="h-8 w-8" />,
-      image: pantryImg,
+        "Trained staff to prepare and serve tea, coffee, and refreshments for meetings and daily operations.",
+      icon: <Utensils className="h-8 w-8" />,
+      image: pantryImg2,
     },
     {
-      id: 1,
-      title: "Pantry Management",
+      id: 3,
+      title: "Guest Hospitality",
       description:
-        "Boost operational efficiency with our reliable pantry staff trained for hospitality and office support.",
-      icon: <Coffee className="h-8 w-8" />,
-      image: pantryImg,
+        "We provide courteous and well-mannered pantry boys to serve guests and employees professionally.",
+      icon: <Users className="h-8 w-8" />,
+      image: pantryImg3,
     },
   ];
 
@@ -53,13 +58,17 @@ const AllPantryServices = () => {
   return (
     <>
       <Helmet>
-        <title>Growel Securitas & Manpower Management Pvt Ltd.</title>
+        <title>Professional Pantry Services | Growel Securitas</title>
         <meta
           name="description"
-          content="Growel Security is one of the Best NOIDA based Indian Private Security Service industrial security company and maintenance consultants and surveyors."
+          content="Hire professional pantry staff for beverage preparation, guest service, and pantry management. Growel Securitas provides trained hospitality manpower across offices and facilities."
         />
-        <link rel="canonical" href="https://growelsecuritas4u.in" />
+        <link
+          rel="canonical"
+          href="https://growelsecuritas4u.in/pantry-services"
+        />
       </Helmet>
+
       <section className="bg-gradient-to-b from-gray-50 to-white py-20">
         <div className="container mx-auto px-4">
           {/* Header */}
@@ -73,8 +82,9 @@ const AllPantryServices = () => {
               Professional <span className="text-red-500">Pantry Services</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Ensure a smooth office experience with our well-trained pantry
-              staff offering top-notch hospitality and support services.
+              Ensure your workplace runs smoothly with our well-trained pantry
+              staff offering reliable support in beverage preparation, pantry
+              maintenance, and guest service.
             </p>
           </motion.div>
 
@@ -126,14 +136,12 @@ const AllPantryServices = () => {
               Need Trained Pantry Staff?
             </h3>
             <p className="mb-6 max-w-2xl mx-auto">
-              Contact our team today to deploy experienced pantry professionals
-              tailored for your office, facility, or organization.
+              Contact our team today to deploy professional pantry staff
+              tailored to your business needs.
             </p>
-            <a href="/contact">
-              <button className="bg-white text-red-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-all duration-300">
-                Contact Us Now
-              </button>
-            </a>
+            <ButtonAnimation className="mt-6 rounded-full border border-red-600 px-8 py-3 font-medium text-black shadow-lg shadow-red-200 transition-all">
+              <Link to="/contact">Contact Us Now</Link>
+            </ButtonAnimation>
           </motion.div>
         </div>
       </section>

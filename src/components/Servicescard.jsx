@@ -17,6 +17,7 @@ const Servicescard = () => {
         "From residential and commercial security to specialized event management and personal protection, our expert guards are prepared for any security challenge.",
       icon: <Shield className="h-10 w-10 text-blue-600" />,
       image: securityservices,
+      link: "/all-types-of-security",
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ const Servicescard = () => {
         "Beyond security, we ensure pristine and hygienic environments with our dedicated housekeeping teams, contributing to a professional and welcoming atmosphere.",
       icon: <Home className="h-10 w-10 text-blue-600" />,
       image: housekeeping,
+      link: "/housekeeping-services",
     },
     {
       id: 3,
@@ -33,6 +35,7 @@ const Servicescard = () => {
         "Our efficient pantry services ensure smooth operations and convenience, adding another layer of support to your business or residential needs.",
       icon: <Coffee className="h-10 w-10 text-blue-600" />,
       image: pantryservices,
+      link: "/all-types-of-pantry-services",
     },
   ];
 
@@ -113,13 +116,8 @@ const Servicescard = () => {
                 </div>
               </div>
               <div className="p-6">
-                {/* <div className="mb-4 flex justify-center">
-                  <div className="p-3 bg-blue-50 rounded-full">
-                    {service.icon}
-                  </div>
-                </div> */}
                 <p className="text-gray-600">{service.description}</p>
-                <Link to={"/all-types-of-security"}>
+                <Link to={service.link}>
                   <button className="mt-6 w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-md transition-colors duration-300">
                     Learn More
                   </button>

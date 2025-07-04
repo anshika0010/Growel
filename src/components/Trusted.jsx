@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Shield, Award, Users, CheckCircle, ShieldCheck } from "lucide-react";
+import { Shield, Award, Users, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import teluslogo from "../assets/Images/teluslogo.png";
 import intechlogo from "../assets/Images/intechlogo.png";
 import sunlordlogo from "../assets/Images/sunlordlog.jpeg";
@@ -12,7 +13,13 @@ import advancedlogo from "../assets/Images/advancedlogo.png";
 import gkopticlogo from "../assets/Images/gkopticlogo.jpeg";
 import palica from "../assets/Images/palica.jpeg";
 import tricon from "../assets/Images/tricon.png";
-
+import Onida from "../assets/Images/Onidalogo.png";
+import shreeceement from "../assets/Images/shreeceement.jpg";
+import wesourcelogo from "../assets/Images/wesourcelogo.jpg";
+import indtech from "../assets/Images/indtech.png";
+import multitex from "../assets/Images/multitexlogo.png";
+import kothari from "../assets/Images/kotharilogo.png";
+import ButtonAnimation from "./ButtonAnimated";
 const Trusted = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -29,6 +36,15 @@ const Trusted = () => {
     { name: "GK Optic Solutions", logo: gkopticlogo },
     { name: "Palica Ventures", logo: palica },
     { name: "Tricon Infotech", logo: tricon },
+  ];
+
+  const clients = [
+    { name: "Onida Digital Solutions", logo: Onida },
+    { name: "shreeceement", logo: shreeceement },
+    { name: "wesource", logo: wesourcelogo },
+    { name: "indtech", logo: indtech },
+    { name: "multitex", logo: multitex },
+    ,
   ];
 
   const stats = [
@@ -77,6 +93,7 @@ const Trusted = () => {
       ref={sectionRef}
       className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-20"
     >
+      {/* Background Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -139,7 +156,7 @@ const Trusted = () => {
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="flex flex-col items-center rounded-xl bg-white p-6 text-center shadow-lg shadow-slate-100"
             >
-              <div className="mb-3 rounded-md bg-red-50  text-red-600">
+              <div className="mb-3 rounded-md bg-red-50 text-red-600">
                 {stat.icon}
               </div>
               <h3 className="text-3xl font-bold text-slate-900">
@@ -150,7 +167,7 @@ const Trusted = () => {
           ))}
         </motion.div>
 
-        {/* Esteemed Clients Carousel */}
+        {/* Client Carousel */}
         <div className="mb-12 text-center">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -179,7 +196,7 @@ const Trusted = () => {
                       whileHover={{ scale: 1.05, y: -5 }}
                       className="flex h-24 w-48 flex-col items-center justify-center rounded-lg bg-white p-4 shadow-md"
                     >
-                      <div className="flex h-24 w-20 items-center justify-center rounded-md ">
+                      <div className="flex h-24 w-20 items-center justify-center rounded-md">
                         {company.logo ? (
                           <img
                             src={company.logo}
@@ -193,36 +210,32 @@ const Trusted = () => {
                       <p className="mt-2 text-sm font-medium text-slate-900">
                         {company.name}
                       </p>
-                      {/* <p className="text-xs text-slate-500">
-                        {company.industry}
-                      </p> */}
                     </motion.div>
                   ))}
                 </div>
               ))}
             </motion.div>
-            {/* Client Logos */}
-            {/* <div className="mb-16">
+
+            {/* Clients Grid */}
+            <div className="mt-16 px-4">
               <h3 className="text-xl font-semibold text-gray-900 text-center mb-8">
                 Our Valued Clients
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-6">
                 {clients.map((client, index) => (
                   <div
                     key={index}
                     className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex items-center justify-center border border-gray-100"
                   >
-                    <Image
-                      src={client.logo || "/placeholder.svg"}
+                    <img
+                      src={client.logo}
                       alt={`${client.name} logo`}
-                      width={160}
-                      height={80}
-                      className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                      className="max-w-full h-auto  transition-opacity duration-300"
                     />
                   </div>
                 ))}
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 
@@ -269,13 +282,10 @@ const Trusted = () => {
           <p className="mt-2 text-slate-600">
             Join our growing list of satisfied clients
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="mt-6 rounded-full bg-red-600 px-8 py-3 font-medium text-white shadow-lg shadow-red-200 transition-all hover:bg-red-700"
-          >
-            Request a Free Consultation
-          </motion.button>
+
+          <ButtonAnimation className="mt-6 rounded-full  border border-red-600 px-8 py-3 font-medium text-black shadow-lg shadow-red-200 transition-all ">
+            <Link to="/contact">Request a Free Consultation</Link>
+          </ButtonAnimation>
         </motion.div>
       </div>
     </section>

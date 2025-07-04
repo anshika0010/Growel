@@ -25,6 +25,7 @@ import GuardImage23 from "../assets/Images/GuardImage23.jpeg";
 import GuardImage24 from "../assets/Images/GuardImage24.jpeg";
 import GuardImage25 from "../assets/Images/GuardImage25.jpeg";
 import GuardImage26 from "../assets/Images/GuardImage26.jpeg";
+import arm from "../assets/Images/arm.jpeg";
 const images = [
   { id: 1, src: GuardImage1 },
   { id: 2, src: GuardImage2 },

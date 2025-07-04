@@ -8,6 +8,7 @@ import OurServices from "./OurServices";
 import ScrollingImageGallery from "./ScrollingImageGallery";
 import Servicescard from "./Servicescard";
 import { Helmet } from "react-helmet";
+import ButtonAnimation from "./ButtonAnimated";
 
 const HomePage = () => {
   return (
@@ -50,16 +51,22 @@ const HomePage = () => {
               experts are standing by to assist you.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/contact">
+              {/* <Link to="/contact">
                 <button className="px-6 py-3 bg-red-600 text-black font-semibold rounded-lg hover:bg-gray-200 transition">
                   Get a Free Quote
                 </button>
-              </Link>
-              <a href="tel:+919811580318">
+              </Link> */}
+              <ButtonAnimation className="mt-6 rounded-full  border border-red-600 px-8 py-3 bg-white font-medium text-black shadow-lg shadow-red-200 transition-all ">
+                <Link to="/contact">Get a Free Quote</Link>
+              </ButtonAnimation>
+              {/* <a href="tel:+919811580318">
                 <button className="px-6 py-3 border bg-red-600 border-white text-black font-semibold rounded-lg hover:bg-gray-200 transition">
                   Call Us Now
                 </button>
-              </a>
+              </a> */}
+              <ButtonAnimation className="mt-6 rounded-full  border border-red-600 px-8 py-3 font-medium text-black bg-white shadow-lg shadow-red-200 transition-all ">
+                <Link to="/contact">call Us Now</Link>
+              </ButtonAnimation>
             </div>
           </div>
         </section>

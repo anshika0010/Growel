@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import Servicescard from "./Servicescard";
 import securityservices from "../assets/Images/securityservices.jpeg";
 import housekeeping from "../assets/Images/housekeeping.jpeg";
-import eventsecurity from "../assets/Images/eventsecurity1.png";
-import armedsecurity from "../assets/Images/armedsecurity.webp";
-import pantryImage from "../assets/Images/pantryservices.jpg";
+import eventsecurity from "../assets/Images/Guard.jpeg";
+
+import armedsecurity from "../assets/Images/arm.jpeg";
+import pantryImage from "../assets/Images/pantryImage.jpeg";
+
 import { Helmet } from "react-helmet";
 export default function ServicesPage() {
   return (
@@ -474,7 +476,7 @@ export default function ServicesPage() {
                   src={armedsecurity}
                   alt="Armed security"
                   fill
-                  className="object-fit h-full w-full"
+                  className="object-contain h-full w-full"
                 />
               </div>
 
@@ -964,7 +966,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href="/contact"
+                to="/contact"
                 className="bg-white text-red-600 hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-center"
               >
                 Get a Free Quote

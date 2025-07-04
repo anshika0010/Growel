@@ -2,10 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import AnimatedHeading from "./AnimatedHeading";
-import Image from "/images/Group.webp";
 import Image1 from "/images/group2.jpg";
 import Image2 from "../assets/Images/GuardImage7.jpeg";
 import Image4 from "../assets/Images/hero.jpeg";
+import Image from "../assets/Images/Image1.jpeg";
 import { motion } from "framer-motion";
 
 import { Link } from "react-router-dom";
@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import ButtonAnimation from "./ButtonAnimated";
 
 const Slider = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,7 +59,7 @@ const Slider = () => {
           <section className="relative bg-slate-900 text-white">
             <div className="absolute inset-0 z-0 opacity-50">
               <img
-                src="https://content.jdmagicbox.com/v2/comp/hyderabad/q8/040pxx40.xx40.140128101125.r3q8/catalogue/s-g-manpower-suppliers-shamirpet-hyderabad-security-services-1rp0vwyj8v.jpg"
+                src={Image}
                 alt="Security personnel"
                 className="object-cover w-full h-full"
               />
@@ -187,9 +188,12 @@ const Slider = () => {
             </ul>
             <Link to="/about">
               {" "}
-              <button className="text-black border-2 border-red-600 px-4 py-2 cursor-pointer hover:bg-red-600 mt-4 rounded-lg">
+              {/* <button className="text-black border-2 border-red-600 px-4 py-2 cursor-pointer hover:bg-red-600 mt-4 rounded-lg">
                 Read More...
-              </button>
+              </button> */}
+              <ButtonAnimation className="text-black border-2 border-red-600 px-4 py-2 cursor-pointer  mt-4 rounded-lg">
+                Read More..
+              </ButtonAnimation>
             </Link>
           </div>
 

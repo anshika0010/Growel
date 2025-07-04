@@ -9,6 +9,7 @@ import ContactPage from "./components/Contact";
 import AboutPage from "./components/About";
 import TestimonialsPage from "./components/Testimonials";
 import Allsecurtyguard from "./components/Allsecurityguard";
+import AllHousekeeping from "./components/AllHousekeeping";
 import AllPantryServices from "./components/AllPantryServices";
 import ScrollToTop from "./components/ScrollToTop";
 import { FaWhatsapp } from "react-icons/fa";
@@ -42,6 +43,14 @@ function App() {
             <Route
               path="/all-types-of-security"
               element={<Allsecurtyguard />}
+            />
+            <Route
+              path="/all-types-of-pantry-services"
+              element={<AllPantryServices />}
+            />
+            <Route
+              path="/housekeeping-services"
+              element={<AllHousekeeping />}
             />
             <Route
               path="/all-types-of-pantry"

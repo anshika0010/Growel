@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import parkingguard from "../assets/Images/parkingguard.jpeg";
-import residentialguard from "../assets/Images/residentialguard.webp";
-import eventguard from "../assets/Images/eventsecurity1.png";
+import parkingguard from "../assets/Images/guard2.jpeg";
+import residentialguard from "../assets/Images/guard1.jpeg";
+import eventguard from "../assets/Images/Guard.jpeg";
 import securityservices from "../assets/Images/securityservices.jpeg";
 import GuardImage13 from "../assets/Images/GuardImage13.jpeg";
 import mallguard from "../assets/Images/mallguard.jpeg";
+import ButtonAnimation from "./ButtonAnimated";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import {
   Shield,
@@ -163,7 +165,7 @@ const AllSecurityGuard = () => {
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="object-cover w-full h-full transition-transform duration-500"
+                      className="object-contain w-full h-full transition-transform duration-500"
                       style={{
                         transform:
                           hoveredCard === service.id
@@ -203,9 +205,9 @@ const AllSecurityGuard = () => {
               Let our experts design a tailored plan for your residential,
               commercial, or event security needs.
             </p>
-            <button className="bg-white text-red-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-md transition-all duration-300">
-              Request Consultation
-            </button>
+            <ButtonAnimation className="mt-6 rounded-full bg-white  border border-red-600 px-8 py-3 font-medium text-black shadow-lg shadow-red-200 transition-all ">
+              <Link to="/contact">Request Consultation</Link>
+            </ButtonAnimation>
           </motion.div>
         </div>
       </section>
